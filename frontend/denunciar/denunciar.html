@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denunciar Golpe - CTUOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/pages/forms.css" />
+</head>
+<body class="no-sidebar">
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <a href="/" class="logo">CTU<span>OS</span></a>
+                <span class="logo-sub">Centro de Inteligência Cibernética</span>
+            </div>
+
+            <div class="header-right">
+
+                <div class="header-search" id="headerSearch">
+                    <span class="search-icon"><i class="fa-solid fa-search"></i></span>
+                    <input type="text" id="headerSearchInput" placeholder="Pesquisar boletins..." />
+                </div>
+
+                <div class="header-guest" id="headerGuest">
+                    <a href="/conta/login.html" class="btn-entrar">Entrar</a>
+                    <a href="/conta/cadastro.html" class="btn-cadastrar">Criar conta</a>
+                </div>
+
+                <div class="user-menu-wrapper" id="userMenuWrapper" style="display:none;">
+                    <button class="user-menu-btn" id="userMenuBtn" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-avatar-small" id="headerAvatar">U</div>
+                        <span class="user-name-small" id="headerUserName">Usuário</span>
+                        <i class="fa-solid fa-chevron-down user-menu-chevron"></i>
+                    </button>
+
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-dropdown-header">
+                            <div class="user-avatar-large" id="dropdownAvatar">U</div>
+                            <div class="user-dropdown-info">
+                                <div class="user-dropdown-name" id="dropdownName">Usuário</div>
+                                <div class="user-dropdown-email" id="dropdownEmail">email@exemplo.com</div>
+                            </div>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <a href="/" class="user-dropdown-item">
+                            <i class="fa-solid fa-house"></i><span>Início</span>
+                        </a>
+                        <a href="/boletim/boletins.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-newspaper"></i><span>Boletins</span>
+                        </a>
+                        <a href="/denunciar/denunciar.html" class="user-dropdown-item active">
+                            <i class="fa-regular fa-pen-to-square"></i><span>Relatar Golpe</span>
+                        </a>
+                        <a href="/estatisticas/estatisticas.html" class="user-dropdown-item">
+                            <i class="fa-solid fa-chart-simple"></i><span>Estatísticas</span>
+                        </a>
+                        <a href="/aprender/aprender.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-circle-question"></i><span>Guias</span>
+                        </a>
+                        <a href="/sobre/sobre.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-building"></i><span>Sobre</span>
+                        </a>
+
+                        <div id="dropdownAdminLinks" style="display:none;">
+                            <div class="user-dropdown-divider"></div>
+                            <div class="user-dropdown-label">Admin</div>
+                            <a href="/admin" class="user-dropdown-item">
+                                <i class="fa-solid fa-gauge-high"></i><span>Dashboard</span>
+                            </a>
+                            <a href="/admin/reports" class="user-dropdown-item">
+                                <i class="fa-regular fa-pen-to-square"></i><span>Denúncias</span>
+                            </a>
+                            <a href="/admin/bulletins" class="user-dropdown-item">
+                                <i class="fa-regular fa-newspaper"></i><span>Boletins</span>
+                            </a>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <a href="/conta/perfil.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-user"></i><span>Meu Perfil</span>
+                        </a>
+                        <a href="/conta/configuracoes.html" class="user-dropdown-item">
+                            <i class="fa-solid fa-gear"></i><span>Configurações</span>
+                        </a>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <div class="user-dropdown-theme">
+                            <div class="user-dropdown-label">
+                                <i class="fa-solid fa-palette"></i> Tema
+                            </div>
+                            <div class="theme-options">
+                                <button class="theme-btn" data-theme="default" title="Dourado"><span class="theme-dot theme-dot-gold"></span></button>
+                                <button class="theme-btn" data-theme="blue" title="Azul"><span class="theme-dot theme-dot-blue"></span></button>
+                                <button class="theme-btn" data-theme="green" title="Verde"><span class="theme-dot theme-dot-green"></span></button>
+                                <button class="theme-btn" data-theme="purple" title="Roxo"><span class="theme-dot theme-dot-purple"></span></button>
+                                <button class="theme-btn" data-theme="red" title="Vermelho"><span class="theme-dot theme-dot-red"></span></button>
+                            </div>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <button class="user-dropdown-item danger" id="dropdownLogout">
+                            <i class="fa-solid fa-sign-out-alt"></i><span>Sair</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>📝 Relatar um Golpe</h1>
+                <p>Sua denúncia ajuda a proteger outras pessoas</p>
+            </div>
+        </div>
+
+        <section class="report-section">
+            <div class="container">
+                <div class="report-wrapper">
+                    <div class="report-desc">
+                        Você sofreu ou presenciou uma tentativa de golpe? Conte para nós. Analisamos e publicamos alertas para proteger outras pessoas.
+                    </div>
+
+                    <form class="report-form" id="reportForm" enctype="multipart/form-data">
+
+                        <div class="login-to-report" id="loginToReport">
+                            🔐 <a id="reportLoginLink" href="/conta/login.html">Faça login</a> ou <a id="reportRegisterLink" href="/conta/cadastro.html">crie uma conta</a> para enviar um relato.
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reportPlatform">Onde o golpe aconteceu? <span class="required">*</span></label>
+                                <select id="reportPlatform" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Telegram">Telegram</option>
+                                    <option value="PIX">PIX</option>
+                                    <option value="Telefone">Telefone / Ligação</option>
+                                    <option value="E-mail">E-mail</option>
+                                    <option value="SMS">SMS</option>
+                                    <option value="Site falso">Site falso</option>
+                                    <option value="App falso">App falso</option>
+                                    <option value="Marketplace">Marketplace</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reportCategory">Categoria do golpe</label>
+                                <select id="reportCategory">
+                                    <option value="Golpe">Golpe</option>
+                                    <option value="Fraude">Fraude</option>
+                                    <option value="Phishing">Phishing</option>
+                                    <option value="Engenharia Social">Engenharia Social</option>
+                                    <option value="Falso Funcionário">Falso Funcionário</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reportState">Estado <span class="required">*</span></label>
+                                <select id="reportState" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="AC">Acre (AC)</option>
+                                    <option value="AL">Alagoas (AL)</option>
+                                    <option value="AP">Amapá (AP)</option>
+                                    <option value="AM">Amazonas (AM)</option>
+                                    <option value="BA">Bahia (BA)</option>
+                                    <option value="CE">Ceará (CE)</option>
+                                    <option value="DF">Distrito Federal (DF)</option>
+                                    <option value="ES">Espírito Santo (ES)</option>
+                                    <option value="GO">Goiás (GO)</option>
+                                    <option value="MA">Maranhão (MA)</option>
+                                    <option value="MT">Mato Grosso (MT)</option>
+                                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                                    <option value="MG">Minas Gerais (MG)</option>
+                                    <option value="PA">Pará (PA)</option>
+                                    <option value="PB">Paraíba (PB)</option>
+                                    <option value="PR">Paraná (PR)</option>
+                                    <option value="PE">Pernambuco (PE)</option>
+                                    <option value="PI">Piauí (PI)</option>
+                                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                                    <option value="RN">Rio Grande do Norte (RN)</option>
+                                    <option value="RS">Rio Grande do Sul (RS)</option>
+                                    <option value="RO">Rondônia (RO)</option>
+                                    <option value="RR">Roraima (RR)</option>
+                                    <option value="SC">Santa Catarina (SC)</option>
+                                    <option value="SP">São Paulo (SP)</option>
+                                    <option value="SE">Sergipe (SE)</option>
+                                    <option value="TO">Tocantins (TO)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reportCity">Cidade (opcional)</label>
+                                <input type="text" id="reportCity" placeholder="Ex: São Paulo" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reportContactType">Tipo de contato do golpista</label>
+                                <select id="reportContactType">
+                                    <option value="other">Outro / Não sei</option>
+                                    <option value="phone">Telefone</option>
+                                    <option value="email">E-mail</option>
+                                    <option value="pix">Chave PIX</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="telegram">Telegram</option>
+                                    <option value="website">Site / URL</option>
+                                    <option value="domain">Domínio</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reportContactValue">Contato do golpista</label>
+                                <input type="text" id="reportContactValue" placeholder="Telefone, e-mail, @usuario..." />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reportIncidentDate">Data do ocorrido (aproximada)</label>
+                                <input type="date" id="reportIncidentDate" />
+                            </div>
+                            <div class="form-group">
+                                <label for="reportEstimatedValue">Valor envolvido (R$)</label>
+                                <input type="text" id="reportEstimatedValue" placeholder="Ex: 500,00 ou 'não houve perda'" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportDescription">Descreva o que aconteceu <span class="required">*</span></label>
+                            <textarea id="reportDescription" placeholder="Conte com o máximo de detalhes..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Enviar mídia (opcional)</label>
+                            <div class="file-upload-wrapper">
+                                <label class="file-label" for="fileInput">
+                                    <i class="fa-solid fa-cloud-upload-alt"></i> Escolher arquivo
+                                </label>
+                                <input type="file" id="fileInput" accept="image/*,video/*,application/pdf" style="display:none;" />
+                                <span class="file-name" id="fileName">Nenhum arquivo</span>
+                                <button type="button" class="file-remove" id="fileRemove" style="display:none;">
+                                    <i class="fa-solid fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="file-preview" id="filePreview" style="display:none;"></div>
+                            <span style="font-size:0.6rem;color:var(--text-tertiary);">JPG, PNG, GIF, MP4, PDF (máx. 10MB)</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportEvidence">Link ou evidência (opcional)</label>
+                            <input type="text" id="reportEvidence" placeholder="Cole link de print, vídeo ou site suspeito" />
+                        </div>
+
+                        <div class="report-tags">
+                            <span>PIX</span>
+                            <span>WhatsApp</span>
+                            <span>Telegram</span>
+                            <span>Correios</span>
+                            <span>Instagram</span>
+                            <span>Site falso</span>
+                            <span>Phishing</span>
+                            <span>Engenharia social</span>
+                            <span>Falso funcionário</span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="reportSubmitBtn">Enviar relato</button>
+                            <button type="reset" class="btn-secondary">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <div class="logo">CTU<span>OS</span></div>
+                <div class="copy">© <span id="footerYear"></span> — Centro de Inteligência Cibernética</div>
+            </div>
+            <div class="footer-col">
+                <h5>Institucional</h5>
+                <a href="/sobre/sobre.html">Sobre</a>
+                <a href="/sobre.html#equipe">Equipe</a>
+                <a href="/sobre.html#missao">Missão</a>
+            </div>
+            <div class="footer-col">
+                <h5>Conteúdo</h5>
+                <a href="/boletim/boletins.html">Boletins</a>
+                <a href="/denunciar/denunciar.html">Relatar</a>
+                <a href="/estatisticas/estatisticas.html">Estatísticas</a>
+                <a href="/aprender/aprender.html">Guias</a>
+                <a href="/conta/configuracoes.html">Configurações</a>
+            </div>
+            <div class="footer-col">
+                <h5>Transparência</h5>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">LGPD</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/denunciar/denunciar.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

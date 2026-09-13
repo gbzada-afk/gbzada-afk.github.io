@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golpe do PIX — Curso CTUOS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="golpe-pix.css">
+</head>
+
+<body>
+  <!-- BACKGROUND -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-track" aria-hidden="true">
+    <div id="reading-progress"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/aprender/aprender.html" class="brand" aria-label="CTUOS, início">CTU<em>OS</em></a>
+      <a class="back-link desktop-back" href="/aprender/aprender.html">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Voltar para Guias</span>
+      </a>
+      <div class="header-actions">
+        <div class="user-indicator">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Curso oficial</span>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Abrir índice">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SHELL -->
+  <div class="course-shell">
+    <aside id="course-sidebar" class="course-sidebar" aria-label="Índice do curso">
+      <div class="sidebar-label">Índice</div>
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="active">Visão geral</a>
+        <a href="#modulo-1">01 — O golpe do PIX</a>
+        <a href="#modulo-2">02 — Tipos de golpe</a>
+        <a href="#modulo-3">03 — Sinais de alerta</a>
+        <a href="#modulo-4">04 — Como se proteger</a>
+        <a href="#modulo-5">05 — Se você caiu</a>
+        <a href="#quiz">Quiz de segurança</a>
+        <a href="#glossario">Glossário</a>
+        <a href="#links-uteis">Links úteis</a>
+      </nav>
+
+      <div class="sidebar-progress">
+        <div class="sidebar-progress-row">
+          <span>Progresso</span>
+          <span id="module-progress-text">0%</span>
+        </div>
+        <div class="module-progress-track">
+          <div id="module-progress"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- HERO -->
+      <section id="inicio" class="hero fade-in">
+        <div class="course-badge">Curso CTUOS</div>
+        <div class="hero-grid">
+          <div>
+            <h1>Golpe do PIX</h1>
+            <p class="hero-subtitle">
+              O PIX se tornou o alvo preferido de criminosos. Entenda como funcionam as principais fraudes e aprenda a se proteger.
+            </p>
+            <div class="hero-meta">
+              <span class="meta-pill"><i class="fa-solid fa-signal"></i> Iniciante</span>
+              <span class="meta-pill"><i class="fa-regular fa-clock"></i> 15 minutos</span>
+              <span class="meta-pill"><i class="fa-regular fa-folder"></i> 5 módulos</span>
+              <span class="meta-pill"><i class="fa-solid fa-certificate"></i> Certificado</span>
+            </div>
+            <a class="gold-button hero-cta" href="#modulo-1">
+              Começar curso
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+          <div class="hero-icon" aria-hidden="true">💳</div>
+        </div>
+      </section>
+
+      <!-- MÓDULO 1 -->
+      <section id="modulo-1" class="lesson-section fade-in">
+        <span class="section-kicker">Módulo 01</span>
+        <h2 class="section-title">O golpe do PIX</h2>
+        <p class="section-intro">
+          O PIX é rápido, prático e gratuito — e é exatamente por isso que os criminosos o escolheram como principal alvo. Vamos entender como funciona.
+        </p>
+
+        <div class="content-grid">
+          <article class="info-card">
+            <h3>Como o PIX funciona</h3>
+            <p>O PIX permite transferências em segundos, 24 horas por dia, todos os dias. Diferente de TED ou DOC, ele não passa por etapas de confirmação humanas — o que garante agilidade, mas também exige atenção redobrada.</p>
+          </article>
+          <article class="info-card">
+            <h3>Por que é alvo de criminosos</h3>
+            <p>Por ser instantâneo, o dinheiro sai da conta em segundos e é difícil de reverter. Além disso, a chave PIX (CPF, e-mail, telefone) é fácil de obter em vazamentos de dados — virou um prato cheio para golpistas.</p>
+          </article>
+        </div>
+
+        <div class="number-grid">
+          <article class="stat-card">
+            <div class="stat-number" data-count="3401579" data-format="number">0</div>
+            <div class="stat-label">Bloqueios e devoluções via MED em 2025</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number" data-count="881.1" data-prefix="R$ " data-suffix=" mi" data-format="decimal">0</div>
+            <div class="stat-label">Valores bloqueados em 2025</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number" data-count="62.9" data-prefix="R$ " data-suffix=" mi" data-format="decimal">0</div>
+            <div class="stat-label">Valores devolvidos em 2025</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number" data-count="7.1" data-suffix="%" data-format="decimal">0</div>
+            <div class="stat-label">Taxa de devolução</div>
+          </article>
+        </div>
+
+        <p class="data-note">
+          Fonte: Banco Central do Brasil, dados consolidados de 2025 sobre o Mecanismo Especial de Devolução (MED).
+        </p>
+
+        <div class="visual-explainer">
+          <div class="fake-message">
+            <div class="sender">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>Exemplo de mensagem suspeita</span>
+            </div>
+            <p>
+              "🔔 Alerta do seu banco: identificamos um PIX agendado no valor de R$ 890,00 em seu nome. Para cancelar, acesse o link abaixo em até 10 minutos."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MÓDULO 2 -->
+      <section id="modulo-2" class="lesson-section fade-in">
+        <span class="section-kicker">Módulo 02</span>
+        <h2 class="section-title">Tipos de golpe do PIX</h2>
+        <p class="section-intro">
+          Os criminosos usam técnicas cada vez mais elaboradas. Conheça as 5 principais modalidades e aprenda a reconhecê-las.
+        </p>
+
+        <div class="scam-grid">
+          <article class="scam-card">
+            <h3>Falsa central de atendimento</h3>
+            <p>O criminoso liga fingindo ser do banco e diz que há uma compra suspeita. Ele pede que você "cancele" o PIX informando a senha ou instalando um app falso.</p>
+            <span class="scam-label">Nunca ligue de volta</span>
+          </article>
+          <article class="scam-card">
+            <h3>PIX agendado falso</h3>
+            <p>Você recebe um SMS ou e-mail dizendo que um PIX está agendado em seu nome. O link leva para uma página falsa que rouba seus dados.</p>
+            <span class="scam-label">Desconfie de urgência</span>
+          </article>
+          <article class="scam-card">
+            <h3>Comprovante falso</h3>
+            <p>Ao vender algo, o golpista envia um comprovante de PIX falso (editado) e insiste que você libere o produto antes de conferir o saldo.</p>
+            <span class="scam-label">Confira o saldo no app</span>
+          </article>
+          <article class="scam-card">
+            <h3>Mão fantasma</h3>
+            <p>Com acesso remoto ao seu celular (via app falso), o criminoso faz transferências sem que você perceba — enquanto você está "na linha" com o falso atendente.</p>
+            <span class="scam-label">Nunca instale apps por ligação</span>
+          </article>
+          <article class="scam-card">
+            <h3>QR Code adulterado</h3>
+            <p>Em estabelecimentos, o criminoso cola um QR Code falso sobre o verdadeiro. O valor vai para a conta dele, não para o comerciante.</p>
+            <span class="scam-label">Confira o nome do recebedor</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- MÓDULO 3 -->
+      <section id="modulo-3" class="lesson-section fade-in">
+        <span class="section-kicker">Módulo 03</span>
+        <h2 class="section-title">Sinais de alerta</h2>
+        <p class="section-intro">
+          Os golpes do PIX têm um padrão. Se você identificar qualquer um desses sinais, pare tudo e verifique por outro canal.
+        </p>
+
+        <ul class="warning-list">
+          <li>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Urgência exagerada: "é só hoje", "em 10 minutos", "sua conta será bloqueada".</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Pedido de instalação de aplicativos por telefone, como "app de segurança" ou "suporte remoto".</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Solicitação de senha, código de verificação (SMS) ou token por telefone, WhatsApp ou e-mail.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Links recebidos por SMS, e-mail ou redes sociais — mesmo que pareçam vir do seu banco.</span>
+          </li>
+        </ul>
+
+        <div class="checklist">
+          <h3>Checklist rápido antes de fazer um PIX</h3>
+          <p>Leia e marque mentalmente antes de qualquer transferência.</p>
+          <label class="check-item">
+            <input type="checkbox" class="safety-check" data-check="official-channel">
+            <span>Confirmei o destinatário por um canal oficial (app do banco, site digitado por mim).</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="safety-check" data-check="recipient">
+            <span>Confiro o nome completo e CPF/CNPJ antes de confirmar.</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="safety-check" data-check="urgency">
+            <span>Não estou agindo por pressão de tempo.</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="safety-check" data-check="no-install">
+            <span>Não instalei nenhum app novo nesta conversa.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- MÓDULO 4 -->
+      <section id="modulo-4" class="lesson-section fade-in">
+        <span class="section-kicker">Módulo 04</span>
+        <h2 class="section-title">Como se proteger</h2>
+        <p class="section-intro">
+          A melhor defesa é o hábito. Adote essas 5 práticas e reduza drasticamente o risco.
+        </p>
+
+        <ol class="protection-list">
+          <li><strong>Ative a verificação em duas etapas</strong> no app do banco e no seu e-mail. Mesmo que roubem sua senha, não conseguem entrar.</li>
+          <li><strong>Cadastre limites de PIX noturno.</strong> A maioria dos bancos permite configurar valores máximos por período — use e reduza.</li>
+          <li><strong>Confirme sempre o destinatário</strong> antes de concluir. Nome, CPF/CNPJ e banco precisam bater com quem você espera.</li>
+          <li><strong>Nunca compartilhe códigos de verificação</strong> por telefone, WhatsApp ou qualquer canal. Nem com "funcionário do banco".</li>
+          <li><strong>Baixe apps apenas pelas lojas oficiais</strong> e apenas quando você mesmo decidiu baixar — nunca porque alguém te pediu por ligação.</li>
+        </ol>
+      </section>
+
+      <!-- MÓDULO 5 -->
+      <section id="modulo-5" class="lesson-section fade-in">
+        <span class="section-kicker">Módulo 05</span>
+        <h2 class="section-title">Se você caiu</h2>
+        <p class="section-intro">
+          Caiu em um golpe? Aja rápido — as primeiras horas são decisivas para tentar recuperar o valor via MED.
+        </p>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-landmark"></i></div>
+            <h3>Contate o banco imediatamente</h3>
+            <p>Use os canais oficiais do seu banco e informe o ocorrido. Peça o registro da contestação do PIX e o número de protocolo.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-badge-alert"></i></div>
+            <h3>Registre boletim de ocorrência</h3>
+            <p>Você pode fazer online pela Delegacia Virtual do seu estado. Guarde o número do BO — será exigido em várias etapas.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-file-lock"></i></div>
+            <h3>Acione o MED</h3>
+            <p>O Mecanismo Especial de Devolução permite que o banco bloqueie o valor na conta do golpista, se ainda houver saldo. Só funciona se você agir rápido.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-folder-search"></i></div>
+            <h3>Reúna provas</h3>
+            <p>Guarde prints, conversas, comprovantes, áudios e e-mails. Tudo pode ser usado no processo e na denúncia às autoridades.</p>
+          </article>
+        </div>
+
+        <div class="med-callout">
+          <h3>O que é o MED?</h3>
+          <p>O Mecanismo Especial de Devolução foi criado pelo Banco Central em 2021 para agilizar a devolução de valores em casos de fraude. Ele permite que o banco do golpista bloqueie o dinheiro antes que ele seja transferido para outras contas.</p>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz" class="lesson-section fade-in">
+        <span class="section-kicker">Quiz</span>
+        <h2 class="section-title">Teste seu conhecimento</h2>
+        <p class="section-intro">
+          Cinco perguntas rápidas para fixar o conteúdo. Você pode refazer quantas vezes quiser.
+        </p>
+
+        <div class="quiz-panel">
+          <div class="quiz-top">
+            <p>Escolha a alternativa mais segura em cada cenário.</p>
+            <span id="quiz-score">0 / 5 corretas</span>
+          </div>
+
+          <div class="question-list">
+            <article class="question" data-question="1">
+              <h3>1. Você recebe uma ligação dizendo ser do banco e pedindo o código do SMS para "cancelar um PIX". O que fazer?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false" type="button">Passar o código rapidamente para cancelar.</button>
+                <button class="answer" data-correct="true" type="button">Desligar e ligar de volta no número oficial do banco.</button>
+                <button class="answer" data-correct="false" type="button">Enviar o código por WhatsApp para o atendente.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question" data-question="2">
+              <h3>2. Você está vendendo um produto e o comprador envia um comprovante de PIX. Qual a atitude mais segura?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true" type="button">Conferir o saldo no app do banco antes de entregar.</button>
+                <button class="answer" data-correct="false" type="button">Confiar no print e entregar o produto.</button>
+                <button class="answer" data-correct="false" type="button">Pedir para o comprador tirar outro print.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question" data-question="3">
+              <h3>3. Um "atendente" pede para você instalar um app de "segurança" para resolver o problema. O que fazer?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false" type="button">Instalar, pois foi indicação do banco.</button>
+                <button class="answer" data-correct="false" type="button">Instalar, mas só se o link parecer oficial.</button>
+                <button class="answer" data-correct="true" type="button">Não instalar nada — bancos nunca pedem isso por telefone.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question" data-question="4">
+              <h3>4. Você recebe um e-mail dizendo que sua conta será bloqueada em 10 minutos. Qual a melhor atitude?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false" type="button">Clicar no link para não perder a conta.</button>
+                <button class="answer" data-correct="true" type="button">Ignorar o e-mail e acessar o banco por um canal oficial.</button>
+                <button class="answer" data-correct="false" type="button">Responder o e-mail pedindo mais informações.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question" data-question="5">
+              <h3>5. Se você caiu em um golpe do PIX, qual o primeiro passo?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true" type="button">Contatar o banco imediatamente e pedir o registro da contestação.</button>
+                <button class="answer" data-correct="false" type="button">Esperar alguns dias antes de tomar qualquer atitude.</button>
+                <button class="answer" data-correct="false" type="button">Falar com o golpista para tentar negociar.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+          </div>
+
+          <div id="quiz-complete" class="quiz-complete">
+            <p>Resultado: <strong id="final-score">0 de 5</strong>. Revise os módulos sempre que precisar.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button id="retry-quiz" type="button" class="secondary-button">
+                <i class="fa-solid fa-rotate-left"></i> Refazer
+              </button>
+              <button id="open-certificate" type="button" class="gold-button">
+                <i class="fa-solid fa-certificate"></i> Emitir certificado
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GLOSSÁRIO -->
+      <section id="glossario" class="lesson-section fade-in">
+        <span class="section-kicker">Glossário</span>
+        <h2 class="section-title">Termos importantes</h2>
+
+        <div class="glossary-grid">
+          <article class="glossary-card">
+            <h3>PIX</h3>
+            <p>Sistema de pagamentos instantâneos criado pelo Banco Central do Brasil, disponível 24 horas por dia.</p>
+          </article>
+          <article class="glossary-card">
+            <h3>MED</h3>
+            <p>Mecanismo Especial de Devolução. Permite ao banco bloquear valores em casos de fraude comprovada.</p>
+          </article>
+          <article class="glossary-card">
+            <h3>Engenharia Social</h3>
+            <p>Conjunto de técnicas que manipulam a vítima para que ela entregue informações ou execute ações.</p>
+          </article>
+          <article class="glossary-card">
+            <h3>Phishing</h3>
+            <p>Envio de mensagens falsas que imitam bancos ou empresas para roubar dados.</p>
+          </article>
+          <article class="glossary-card">
+            <h3>Mão fantasma</h3>
+            <p>Golpe em que o criminoso controla o celular da vítima à distância e faz transferências sem ela perceber.</p>
+          </article>
+          <article class="glossary-card">
+            <h3>2FA</h3>
+            <p>Autenticação em dois fatores. Camada extra de segurança que exige dois tipos de verificação.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- LINKS -->
+      <section id="links-uteis" class="lesson-section fade-in">
+        <span class="section-kicker">Recursos</span>
+        <h2 class="section-title">Links úteis</h2>
+        <p class="section-intro">
+          Canais oficiais para denunciar, reclamar e buscar ajuda.
+        </p>
+
+        <div class="useful-links">
+          <a class="useful-link" href="https://www.bcb.gov.br/meubc/faqs/p/o-que-e-e-como-funciona-o-mecanismo-especial-de-devolucao-med" target="_blank" rel="noopener">
+            <div>
+              <strong>Banco Central — MED</strong>
+              <span>Entenda o Mecanismo Especial de Devolução</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="useful-link" href="https://www.gov.br/mj/pt-br/assuntos/seus-direitos/consumidor" target="_blank" rel="noopener">
+            <div>
+              <strong>Consumidor.gov.br</strong>
+              <span>Reclamações contra empresas e bancos</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="useful-link" href="https://delegaciavirtual.sinesp.gov.br" target="_blank" rel="noopener">
+            <div>
+              <strong>Delegacia Virtual</strong>
+              <span>Registre boletim de ocorrência online</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="useful-link" href="/denunciar/denunciar.html">
+            <div>
+              <strong>CTUOS — Relatar Golpe</strong>
+              <span>Ajude outras pessoas denunciando o caso</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- SOBRE O CURSO -->
+      <section class="about-box fade-in">
+        <h2>Sobre este curso</h2>
+        <div class="about-details">
+          <div class="about-detail">
+            <span>Autor</span>
+            <p>Equipe CTUOS — Centro de Inteligência Cibernética</p>
+          </div>
+          <div class="about-detail">
+            <span>Versão</span>
+            <p>1.0.0</p>
+          </div>
+          <div class="about-detail">
+            <span>Publicado</span>
+            <p>Setembro de 2026</p>
+          </div>
+          <div class="about-detail">
+            <span>Última atualização</span>
+            <p>Setembro de 2026</p>
+          </div>
+          <div class="about-detail full">
+            <span>Licença</span>
+            <p>Este material é de uso educacional. Reprodução permitida com créditos ao CTUOS — Centro de Inteligência Cibernética.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="brand">CTU<em>OS</em></div>
+        <p class="footer-copy">
+          © 2026 CTUOS — Centro de Inteligência Cibernética. Todos os direitos reservados.
+        </p>
+        <p class="footer-copy">
+          Material educacional produzido pela equipe CTUOS. Proibida a reprodução comercial sem autorização.
+        </p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="/">Início</a>
+        <a href="/boletim/boletins.html">Boletins</a>
+        <a href="/denunciar/denunciar.html">Relatar Golpe</a>
+        <a href="/aprender/aprender.html">Guias</a>
+        <a href="/sobre/sobre.html">Sobre</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- CERTIFICADO -->
+  <div id="certificate-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="certificate-modal">
+      <div class="modal-head">
+        <div>
+          <span class="section-kicker">Certificado</span>
+          <h2 class="section-title" style="font-size:1.4rem;">Emissão de certificado</h2>
+        </div>
+        <button id="close-certificate" class="close-modal" type="button" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="certificate-form" class="certificate-form">
+        <label for="participant-name">Digite seu nome completo</label>
+        <input id="participant-name" type="text" maxlength="70" required placeholder="Seu nome">
+        <button type="submit" class="gold-button">
+          <i class="fa-solid fa-certificate"></i> Gerar certificado
+        </button>
+      </form>
+
+      <div id="certificate-paper" class="certificate-paper">
+        <div class="brand">CTU<em>OS</em></div>
+        <h2>Certificado de Conclusão</h2>
+        <p>Certificamos que</p>
+        <div id="certificate-name"></div>
+        <p>concluiu com êxito o curso <strong>"Golpe do PIX"</strong>, promovido pelo CTUOS — Centro de Inteligência Cibernética, com carga horária estimada de 15 minutos.</p>
+        <div id="certificate-date" class="certificate-sign"></div>
+        <div class="certificate-sign">Equipe CTUOS</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="golpe-pix.js"></script>
+</body>
+
+</html>

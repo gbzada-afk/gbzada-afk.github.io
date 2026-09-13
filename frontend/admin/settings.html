@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTUOS Admin — Configurações</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/admin/css/global.css" />
+    <link rel="stylesheet" href="/admin/css/components.css" />
+    <link rel="stylesheet" href="/admin/css/forms.css" />
+    <link rel="stylesheet" href="/admin/css/layout.css" />
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-left">
+                <a href="/admin" class="admin-logo">
+                    CTU<span>OS</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+
+                <nav class="admin-nav">
+                    <a href="/admin">Início</a>
+                    <a href="/admin">Dashboard</a>
+                    <a href="/admin/reports">Denúncias</a>
+                    <a href="/admin/bulletins">Boletins</a>
+                    <a href="/admin/statistics">Estatísticas</a>
+                    <a href="/admin/settings" class="active">Configurações</a>
+                </nav>
+            </div>
+
+            <div class="admin-header-right">
+                <a href="/" class="btn-admin ghost sm" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Ver site
+                </a>
+
+                <div class="admin-user">
+                    <div class="admin-user-avatar" id="adminAvatar">A</div>
+                    <span class="admin-user-name" id="adminName">Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>⚙️ Configurações</h1>
+                <p>Gerencie as configurações do sistema</p>
+            </div>
+        </div>
+
+        <section class="admin-page">
+            <div class="container">
+
+                <!-- Abas -->
+                <div class="filter-admin">
+                    <span class="filter-admin-label">Seção:</span>
+                    <button class="filter-admin-btn active" data-tab="site">Site</button>
+                    <button class="filter-admin-btn" data-tab="security">Segurança</button>
+                    <button class="filter-admin-btn" data-tab="notifications">Notificações</button>
+                    <button class="filter-admin-btn" data-tab="reports">Denúncias</button>
+                    <button class="filter-admin-btn" data-tab="maintenance">Manutenção</button>
+                </div>
+
+                <!-- Painel: Site -->
+                <div class="tab-panel" id="panel-site">
+                    <div class="card-admin">
+                        <div class="card-admin-header">
+                            <div class="card-admin-title">
+                                <i class="fa-solid fa-globe"></i> Configurações do Site
+                            </div>
+                        </div>
+
+                        <form id="siteSettingsForm">
+                            <div class="form-group-admin">
+                                <label for="siteTitle">Título do Site</label>
+                                <input type="text" id="siteTitle" value="CTUOS" />
+                            </div>
+
+                            <div class="form-group-admin">
+                                <label for="siteDescription">Descrição</label>
+                                <input type="text" id="siteDescription" value="Centro de Inteligência Cibernética" />
+                            </div>
+
+                            <div class="form-actions-admin">
+                                <button type="submit" class="btn-admin primary">
+                                    <i class="fa-solid fa-check"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Painel: Segurança -->
+                <div class="tab-panel" id="panel-security" style="display:none;">
+                    <div class="card-admin">
+                        <div class="card-admin-header">
+                            <div class="card-admin-title">
+                                <i class="fa-solid fa-shield-halved"></i> Segurança
+                            </div>
+                        </div>
+
+                        <form id="securitySettingsForm">
+                            <div class="form-group-admin">
+                                <label for="securityLevel">Nível de Segurança</label>
+                                <select id="securityLevel">
+                                    <option value="low">Baixo</option>
+                                    <option value="medium" selected>Médio</option>
+                                    <option value="high">Alto</option>
+                                    <option value="paranoid">Paranóico</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group-admin">
+                                <label for="rateLimit">Rate Limit (req/15min)</label>
+                                <input type="number" id="rateLimit" value="100" min="10" max="1000" />
+                            </div>
+
+                            <div class="form-actions-admin">
+                                <button type="submit" class="btn-admin primary">
+                                    <i class="fa-solid fa-check"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Painel: Notificações -->
+                <div class="tab-panel" id="panel-notifications" style="display:none;">
+                    <div class="card-admin">
+                        <div class="card-admin-header">
+                            <div class="card-admin-title">
+                                <i class="fa-solid fa-bell"></i> Notificações
+                            </div>
+                        </div>
+
+                        <form id="notificationSettingsForm">
+                            <div class="form-group-admin">
+                                <label class="checkbox-admin">
+                                    <input type="checkbox" id="emailNotifications" checked />
+                                    Receber notificações por e-mail
+                                </label>
+                            </div>
+
+                            <div class="form-group-admin">
+                                <label for="alertThreshold">Alertar quando houver mais de X denúncias/dia</label>
+                                <input type="number" id="alertThreshold" value="10" min="1" />
+                            </div>
+
+                            <div class="form-actions-admin">
+                                <button type="submit" class="btn-admin primary">
+                                    <i class="fa-solid fa-check"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Painel: Denúncias -->
+                <div class="tab-panel" id="panel-reports" style="display:none;">
+                    <div class="card-admin">
+                        <div class="card-admin-header">
+                            <div class="card-admin-title">
+                                <i class="fa-regular fa-file-lines"></i> Configurações de Denúncias
+                            </div>
+                        </div>
+
+                        <form id="reportSettingsForm">
+                            <div class="form-group-admin">
+                                <label class="checkbox-admin">
+                                    <input type="checkbox" id="autoApprove" />
+                                    Aprovar denúncias automaticamente
+                                </label>
+                            </div>
+
+                            <div class="form-group-admin">
+                                <label for="maxFileSize">Tamanho máximo de arquivo (MB)</label>
+                                <input type="number" id="maxFileSize" value="10" min="1" max="100" />
+                            </div>
+
+                            <div class="form-actions-admin">
+                                <button type="submit" class="btn-admin primary">
+                                    <i class="fa-solid fa-check"></i> Salvar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Painel: Manutenção -->
+                <div class="tab-panel" id="panel-maintenance" style="display:none;">
+                    <div class="card-admin">
+                        <div class="card-admin-header">
+                            <div class="card-admin-title">
+                                <i class="fa-solid fa-wrench"></i> Manutenção
+                            </div>
+                        </div>
+
+                        <div class="form-actions-admin">
+                            <button class="btn-admin" id="backupBtn">
+                                <i class="fa-solid fa-database"></i> Criar Backup
+                            </button>
+                            <button class="btn-admin" id="cleanupBtn">
+                                <i class="fa-solid fa-broom"></i> Limpar Temporários
+                            </button>
+                        </div>
+
+                        <p class="text-muted" style="font-size:0.75rem; margin-top:0.8rem;">
+                            ⚠️ Estas ações podem demorar alguns segundos.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-admin">
+        <div class="footer-brand">CTU<span>OS</span> — Painel Administrativo</div>
+        <div>© <span id="footerYear"></span> CTUOS. Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="/admin/js/admin-guard.js"></script>
+    <script src="/admin/js/cmsApi.js"></script>
+    <script src="/admin/js/settings.js"></script>
+    <script>
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        // Sistema de abas
+        document.querySelectorAll('.filter-admin-btn[data-tab]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-admin-btn[data-tab]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+                const tab = this.dataset.tab;
+                const panel = document.getElementById('panel-' + tab);
+                if (panel) panel.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

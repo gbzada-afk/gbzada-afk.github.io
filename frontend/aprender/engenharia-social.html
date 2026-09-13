@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia Social — Curso CTUOS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/aprender/engenharia-social.css">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- ===== READING PROGRESS ===== -->
+    <div class="reading">
+      <div id="reading-progress"></div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="top">
+      <div class="topin">
+        <a class="brand" href="/aprender/aprender.html" aria-label="CTUOS, início">
+          CTU<em>OS</em>
+        </a>
+        <a class="back-link" href="/aprender/aprender.html">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Voltar para Guias</span>
+        </a>
+        <button id="toggle" class="hamb" type="button" aria-label="Abrir índice" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== SHELL ===== -->
+    <div class="shell">
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside id="side" class="side" aria-label="Índice do curso">
+        <span class="eyebrow">Índice do curso</span>
+        <nav class="nav">
+          <a class="active" href="#inicio">Visão geral</a>
+          <a href="#modulo-1">01 — O que é</a>
+          <a href="#modulo-2">02 — Persuasão</a>
+          <a href="#modulo-3">03 — Técnicas</a>
+          <a href="#modulo-4">04 — Golpes famosos</a>
+          <a href="#modulo-5">05 — Proteção</a>
+          <a href="#modulo-6">06 — Casos reais</a>
+          <a href="#quiz">Quiz</a>
+          <a href="#glossario">Glossário</a>
+          <a href="#links">Links úteis</a>
+        </nav>
+        <div class="progressbox">
+          <div class="progressrow">
+            <span>Progresso</span>
+            <span id="visited">0%</span>
+          </div>
+          <div class="bar">
+            <div id="module-progress"></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ===== MAIN ===== -->
+      <main>
+
+        <!-- HERO -->
+        <section id="inicio" class="hero fade" aria-labelledby="course-title">
+          <span class="badge">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Curso CTUOS
+          </span>
+          <div class="hero-grid">
+            <div>
+              <h1 id="course-title">Engenharia Social</h1>
+              <p class="subtitle">
+                Como criminosos manipulam pessoas para obter dados, acessos e dinheiro — e como se defender.
+              </p>
+              <div class="meta">
+                <span class="pill"><i class="fa-solid fa-signal"></i> Intermediário</span>
+                <span class="pill"><i class="fa-regular fa-clock"></i> 25 minutos</span>
+                <span class="pill"><i class="fa-regular fa-folder"></i> 6 módulos</span>
+                <span class="pill"><i class="fa-solid fa-certificate"></i> Certificado</span>
+              </div>
+              <a class="btn gold" href="#modulo-1">
+                Começar curso
+                <i class="fa-solid fa-arrow-down"></i>
+              </a>
+            </div>
+            <div class="brain" aria-hidden="true">🧠</div>
+          </div>
+        </section>
+
+        <!-- MÓDULO 1 -->
+        <section id="modulo-1" class="fade course-module" aria-labelledby="m1">
+          <span class="eyebrow">Módulo 01</span>
+          <h2 id="m1" class="section-title">O que é engenharia social</h2>
+          <p class="intro">
+            Engenharia social é a arte de manipular pessoas para que elas mesmas entreguem acesso, informação ou dinheiro. Em vez de explorar falhas técnicas, explora a natureza humana.
+          </p>
+
+          <div class="grid2">
+            <article class="card">
+              <h3>Hackear a pessoa</h3>
+              <p>Engenharia social é manipulação psicológica: alguém usa confiança, medo, pressa ou curiosidade para induzir uma ação. Em vez de explorar uma falha em código, explora decisões humanas.</p>
+            </article>
+            <article class="card">
+              <h3>Hackear o sistema</h3>
+              <p>Um ataque técnico busca vulnerabilidades em software, rede ou dispositivo. Na engenharia social, a pessoa pode entregar acesso voluntariamente, contornando controles sofisticados.</p>
+            </article>
+          </div>
+
+          <div class="statgrid">
+            <div class="stat">
+              <b>98%</b>
+              <span>dos ataques cibernéticos envolvem algum componente humano ou de engenharia social.</span>
+            </div>
+            <div class="stat">
+              <b>Mitnick</b>
+              <span>Kevin Mitnick se tornou símbolo público do “hacker humano” ao demonstrar o poder da persuasão.</span>
+            </div>
+            <div class="stat">
+              <b>1 ação</b>
+              <span>um clique, código ou transferência pode ser suficiente para iniciar um incidente grave.</span>
+            </div>
+          </div>
+
+          <p class="note">
+            Dados de referência são usados para conscientização. Estatísticas de incidentes variam conforme metodologia e fonte.
+          </p>
+        </section>
+
+        <!-- MÓDULO 2 -->
+        <section id="modulo-2" class="fade course-module" aria-labelledby="m2">
+          <span class="eyebrow">Módulo 02</span>
+          <h2 id="m2" class="section-title">Os 6 princípios da persuasão</h2>
+          <p class="intro">
+            Criminosos exploram princípios universais de influência. Conheça cada um e aprenda a reconhecê-los.
+          </p>
+
+          <div class="grid3">
+            <article class="principle">
+              <h3>Reciprocidade</h3>
+              <p>Dar algo antes de pedir cria uma sensação de dívida.</p>
+              <span class="example">EXEMPLO → “Liberei um benefício; confirme seu código para ativar.”</span>
+            </article>
+            <article class="principle">
+              <h3>Compromisso</h3>
+              <p>Pequenos “sins” facilitam pedidos maiores depois.</p>
+              <span class="example">EXEMPLO → “Confirme seu e-mail.” Depois: “Envie o token.”</span>
+            </article>
+            <article class="principle">
+              <h3>Aprovação social</h3>
+              <p>“Todo mundo faz” reduz o senso de alerta.</p>
+              <span class="example">EXEMPLO → “Todos os colaboradores já atualizaram.”</span>
+            </article>
+            <article class="principle">
+              <h3>Afeição</h3>
+              <p>Simpatia, empatia e semelhança aceleram confiança.</p>
+              <span class="example">EXEMPLO → um contato amigável diz trabalhar no mesmo setor.</span>
+            </article>
+            <article class="principle">
+              <h3>Autoridade</h3>
+              <p>Cargo, uniforme, logotipo ou linguagem técnica pressionam.</p>
+              <span class="example">EXEMPLO → “Sou do suporte; preciso acessar sua conta agora.”</span>
+            </article>
+            <article class="principle">
+              <h3>Escassez</h3>
+              <p>Urgência e oportunidade limitada inibem reflexão.</p>
+              <span class="example">EXEMPLO → “Última chance: resolva em 10 minutos.”</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- MÓDULO 3 -->
+        <section id="modulo-3" class="fade course-module" aria-labelledby="m3">
+          <span class="eyebrow">Módulo 03</span>
+          <h2 id="m3" class="section-title">Técnicas comuns</h2>
+          <p class="intro">
+            Os criminosos usam várias técnicas para manipular suas vítimas. Estas são as mais frequentes.
+          </p>
+
+          <div class="grid3">
+            <article class="tech">
+              <b>Pretexting</b>
+              <p>História falsa para justificar um pedido. Ex.: “Sou da auditoria e preciso validar seu acesso.”</p>
+            </article>
+            <article class="tech">
+              <b>Baiting</b>
+              <p>Isca física ou digital. Ex.: pendrive “Folha salarial” deixado em local compartilhado.</p>
+            </article>
+            <article class="tech">
+              <b>Tailgating</b>
+              <p>Entrar atrás de uma pessoa autorizada em área controlada, usando cordialidade ou pressa.</p>
+            </article>
+            <article class="tech">
+              <b>Quid pro quo</b>
+              <p>Troca de favores. Ex.: falso técnico oferece ajuda em troca de credenciais temporárias.</p>
+            </article>
+            <article class="tech">
+              <b>Phishing</b>
+              <p>Mensagem que direciona a página, anexo ou formulário falso. Aprofundado em curso específico.</p>
+            </article>
+            <article class="tech">
+              <b>Vishing</b>
+              <p>Ligação fraudulenta: o criminoso usa voz, scripts e urgência para pedir dados ou códigos.</p>
+            </article>
+            <article class="tech">
+              <b>Imitação de autoridade</b>
+              <p>Falsa identidade de banco, RH, polícia, entregador ou fornecedor para obter obediência rápida.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- MÓDULO 4 -->
+        <section id="modulo-4" class="fade course-module" aria-labelledby="m4">
+          <span class="eyebrow">Módulo 04</span>
+          <h2 id="m4" class="section-title">Golpes famosos</h2>
+          <p class="intro">
+            Cada golpe abaixo é usado todos os dias. Clique para ver como funciona, o roteiro do criminoso e como reagir.
+          </p>
+
+          <details class="details">
+            <summary>Falso funcionário de banco <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="casebody">
+              <div>
+                <h3>Como funciona</h3>
+                <p>O golpista informa uma “movimentação suspeita” e tenta obter senha, token, código SMS ou induzir a instalação de aplicativo.</p>
+              </div>
+              <div>
+                <h3>Roteiro do criminoso</h3>
+                <div class="script">“Identificamos uma compra indevida. Para bloquear agora, informe o código que acabou de chegar ao seu celular.”</div>
+              </div>
+              <div>
+                <h3>Sinais e reação</h3>
+                <ul>
+                  <li>Banco não pede token, senha ou código de autenticação por ligação.</li>
+                  <li>Encerre a chamada e use o número oficial do cartão ou aplicativo.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="details">
+            <summary>Falso suporte técnico <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="casebody">
+              <div>
+                <h3>Como funciona</h3>
+                <p>Uma pessoa afirma ter detectado vírus, falha de conta ou problema no computador e pede acesso remoto.</p>
+              </div>
+              <div>
+                <h3>Roteiro do criminoso</h3>
+                <div class="script">“Sou do suporte. Seu dispositivo enviou alertas críticos; instale esta ferramenta para eu corrigir.”</div>
+              </div>
+              <div>
+                <h3>Sinais e reação</h3>
+                <ul>
+                  <li>Suporte legítimo não surge sem solicitação nem exige ferramenta desconhecida.</li>
+                  <li>Não instale nada; procure o suporte oficial pelo canal conhecido.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="details">
+            <summary>Falso RH e falsa vaga <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="casebody">
+              <div>
+                <h3>Como funciona</h3>
+                <p>Criminosos usam vagas atraentes e documentos de contratação para capturar dados ou distribuir arquivos maliciosos.</p>
+              </div>
+              <div>
+                <h3>Roteiro do criminoso</h3>
+                <div class="script">“Parabéns, você foi selecionado. Baixe a ficha de admissão e preencha ainda hoje.”</div>
+              </div>
+              <div>
+                <h3>Sinais e reação</h3>
+                <ul>
+                  <li>Confira a vaga diretamente no site e canais verificados da empresa.</li>
+                  <li>Evite abrir arquivos inesperados e não envie documentos sensíveis sem validação.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="details">
+            <summary>Falso parente no WhatsApp <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="casebody">
+              <div>
+                <h3>Como funciona</h3>
+                <p>O golpista usa um novo número e finge ser familiar em emergência financeira.</p>
+              </div>
+              <div>
+                <h3>Roteiro do criminoso</h3>
+                <div class="script">“Mãe, troquei de número. Meu aplicativo do banco travou e preciso fazer um pagamento urgente.”</div>
+              </div>
+              <div>
+                <h3>Sinais e reação</h3>
+                <ul>
+                  <li>Ligue para o número já conhecido ou confirme pessoalmente.</li>
+                  <li>Use uma palavra-código combinada pela família antes de transferir dinheiro.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="details">
+            <summary>Falso sequestro e falso entregador <i class="fa-solid fa-chevron-down"></i></summary>
+            <div class="casebody">
+              <div>
+                <h3>Como funciona</h3>
+                <p>São golpes de alta pressão emocional: ameaça, pedido imediato de dinheiro ou uma entrega inesperada com cobrança e link.</p>
+              </div>
+              <div>
+                <h3>Roteiro do criminoso</h3>
+                <div class="script">“Não desligue. Seu familiar está conosco.” / “Sua entrega está retida; pague a taxa neste link.”</div>
+              </div>
+              <div>
+                <h3>Sinais e reação</h3>
+                <ul>
+                  <li>Respire, não forneça dados e procure contato independente com a pessoa ou empresa.</li>
+                  <li>Em ameaça real, acione autoridades pelos canais oficiais.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <!-- MÓDULO 5 -->
+        <section id="modulo-5" class="fade course-module" aria-labelledby="m5">
+          <span class="eyebrow">Módulo 05</span>
+          <h2 id="m5" class="section-title">Como se proteger</h2>
+          <p class="intro">
+            Adote esses 6 hábitos e reduza drasticamente o risco de cair em engenharia social.
+          </p>
+
+          <div class="steps">
+            <div>Desconfie de urgência. Pressa é uma ferramenta do criminoso, não uma prova de legitimidade.</div>
+            <div>Verifique identidades por canal independente: ligue de volta usando número oficial ou acesse o aplicativo.</div>
+            <div>Nunca compartilhe senhas, códigos de autenticação, tokens ou dados bancários por ligação e mensagem.</div>
+            <div>Use senhas longas e exclusivas, idealmente com gerenciador de senhas e autenticação em dois fatores.</div>
+            <div>Crie um protocolo familiar: definam uma palavra-código que só pessoas próximas conheçam.</div>
+            <div>Pratique educação contínua: golpes mudam de canal, mas repetem padrões de pressão e confiança.</div>
+          </div>
+
+          <div class="checklist">
+            <h3>Checklist de proteção</h3>
+            <p>Marque os hábitos que você já adota:</p>
+            <label class="check">
+              <input class="safecheck" data-key="urgency" type="checkbox">
+              <span>Eu paro antes de agir quando uma mensagem tenta me apressar.</span>
+            </label>
+            <label class="check">
+              <input class="safecheck" data-key="channel" type="checkbox">
+              <span>Eu confirmo pedidos financeiros em um canal independente.</span>
+            </label>
+            <label class="check">
+              <input class="safecheck" data-key="codes" type="checkbox">
+              <span>Eu nunca compartilho códigos de verificação com terceiros.</span>
+            </label>
+            <label class="check">
+              <input class="safecheck" data-key="family" type="checkbox">
+              <span>Minha família tem uma palavra-código para situações urgentes.</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- MÓDULO 6 -->
+        <section id="modulo-6" class="fade course-module" aria-labelledby="m6">
+          <span class="eyebrow">Módulo 06</span>
+          <h2 id="m6" class="section-title">Casos reais</h2>
+          <p class="intro">
+            Esses casos mostram que engenharia social funciona em qualquer nível — de empresas gigantes a famílias.
+          </p>
+
+          <div class="casegrid">
+            <article class="card">
+              <h3>Twitter — 2020</h3>
+              <p>Atacantes fizeram spear phishing por telefone contra funcionários e ampliaram o acesso a ferramentas internas. Foram visadas 130 contas; 45 publicaram fraude com Bitcoin.</p>
+              <p class="note">Lição: MFA não elimina o risco quando pessoas e privilégios podem ser explorados.</p>
+            </article>
+            <article class="card">
+              <h3>Google e Facebook — 2017</h3>
+              <p>Uma empresa homônima de fornecedora real foi usada em fraude BEC com e-mails, faturas e contratos falsificados. O esquema ultrapassou US$ 100 milhões.</p>
+              <p class="note">Lição: mudanças bancárias exigem confirmação fora do e-mail e dupla aprovação.</p>
+            </article>
+            <article class="card">
+              <h3>Ubiquiti — 2015</h3>
+              <p>Falsificação de identidade de funcionários e solicitações ao setor financeiro resultaram em transferências de US$ 46,7 milhões para contas estrangeiras.</p>
+              <p class="note">Lição: separação de funções e validação independente reduzem fraudes financeiras.</p>
+            </article>
+            <article class="card">
+              <h3>Brasil: atenção aos dados</h3>
+              <p>O CERT.br acompanha incidentes notificados voluntariamente e páginas falsas usadas em phishing. Esses números são sinais de tendência, não o total de golpes no país.</p>
+              <p class="note">Boa prática: cite “incidentes notificados voluntariamente ao CERT.br” ao analisar estatísticas.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="quiz" class="fade" aria-labelledby="quiz-title">
+          <span class="eyebrow">Quiz</span>
+          <h2 id="quiz-title" class="section-title">Teste seu conhecimento</h2>
+          <p class="intro">
+            Dez perguntas rápidas para fixar o conteúdo. Você pode refazer quantas vezes quiser.
+          </p>
+
+          <div class="quiz">
+            <div class="quizhead">
+              <span>Escolha a alternativa mais segura em cada cenário.</span>
+              <span id="score" class="score">0 / 10 corretas</span>
+            </div>
+
+            <div class="questions">
+              <article class="question">
+                <h3>1. Um “banco” pede seu código SMS para cancelar uma compra. O que fazer?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="false">Enviar o código imediatamente.</button>
+                  <button class="answer" data-correct="true">Encerrar e usar o canal oficial do banco.</button>
+                  <button class="answer" data-correct="false">Instalar o aplicativo indicado na ligação.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>2. Um colega segura a porta de área restrita para alguém sem crachá. Qual é o risco?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="true">Tailgating: entrada usando a confiança de outra pessoa.</button>
+                  <button class="answer" data-correct="false">Apenas um problema de recepção.</button>
+                  <button class="answer" data-correct="false">Nenhum, se a pessoa parecer apressada.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>3. Você encontra um pendrive com o nome “Salários 2026”. Qual ação é segura?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="false">Abrir em qualquer computador para identificar o dono.</button>
+                  <button class="answer" data-correct="true">Não conectar e entregar ao time responsável.</button>
+                  <button class="answer" data-correct="false">Levar para casa e testar.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>4. “Todos da empresa já atualizaram o cadastro.” Qual princípio aparece?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="true">Aprovação social.</button>
+                  <button class="answer" data-correct="false">Reciprocidade.</button>
+                  <button class="answer" data-correct="false">Quid pro quo.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>5. Uma falsa vaga exige abrir um arquivo urgente. O que fazer?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="true">Confirmar a vaga no canal oficial antes de abrir qualquer arquivo.</button>
+                  <button class="answer" data-correct="false">Abrir, pois recrutamento sempre envia anexos.</button>
+                  <button class="answer" data-correct="false">Encaminhar o arquivo para amigos analisarem.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>6. Vishing é uma técnica baseada principalmente em:</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="false">Pendrives.</button>
+                  <button class="answer" data-correct="true">Voz, telefone e pressão emocional.</button>
+                  <button class="answer" data-correct="false">Somente anúncios em redes sociais.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>7. Um familiar pede PIX de um novo número. Qual é a melhor reação?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="true">Ligar para o número conhecido e pedir a palavra-código familiar.</button>
+                  <button class="answer" data-correct="false">Transferir rapidamente para ajudar.</button>
+                  <button class="answer" data-correct="false">Pedir mais dados bancários pelo mesmo chat.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>8. Qual controle reduz risco de fraude em pagamentos corporativos?</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="false">Confiar em e-mails com assinatura corporativa.</button>
+                  <button class="answer" data-correct="true">Dupla aprovação e confirmação por outro canal.</button>
+                  <button class="answer" data-correct="false">Agir rápido para evitar multa.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>9. Um falso técnico oferece “ajuda” em troca de acesso. Isso é:</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="false">Baiting.</button>
+                  <button class="answer" data-correct="true">Quid pro quo.</button>
+                  <button class="answer" data-correct="false">Tailgating.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+
+              <article class="question">
+                <h3>10. A melhor defesa inicial contra engenharia social é:</h3>
+                <div class="answers">
+                  <button class="answer" data-correct="true">Pausar, verificar e agir por canal independente.</button>
+                  <button class="answer" data-correct="false">Responder para testar a identidade.</button>
+                  <button class="answer" data-correct="false">Confiar se houver urgência e logotipo.</button>
+                </div>
+                <p class="feedback"></p>
+              </article>
+            </div>
+
+            <div id="complete" class="complete">
+              <p>Resultado final: <strong id="final"></strong>. A melhor resposta de segurança quase sempre começa com uma pausa.</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <button id="retry" class="btn secondary" type="button">
+                  <i class="fa-solid fa-rotate-left"></i> Refazer quiz
+                </button>
+                <button id="open-cert" class="btn gold" type="button">
+                  <i class="fa-solid fa-certificate"></i> Gerar certificado
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GLOSSÁRIO -->
+        <section id="glossario" class="fade" aria-labelledby="glossary-title">
+          <span class="eyebrow">Glossário</span>
+          <h2 id="glossary-title" class="section-title">Termos importantes</h2>
+
+          <div class="gloss">
+            <article class="card">
+              <h3>Pretexting</h3>
+              <p>Uso de uma história falsa para justificar solicitação de dados, acesso ou ação.</p>
+            </article>
+            <article class="card">
+              <h3>Baiting</h3>
+              <p>Isca física ou digital criada para despertar curiosidade e levar a uma ação insegura.</p>
+            </article>
+            <article class="card">
+              <h3>Tailgating</h3>
+              <p>Entrada não autorizada em ambiente físico acompanhando alguém autorizado.</p>
+            </article>
+            <article class="card">
+              <h3>Quid pro quo</h3>
+              <p>Promessa de benefício ou ajuda em troca de informação, acesso ou serviço.</p>
+            </article>
+            <article class="card">
+              <h3>Phishing</h3>
+              <p>Fraude digital que tenta capturar dados, credenciais ou dinheiro por mensagens e páginas falsas.</p>
+            </article>
+            <article class="card">
+              <h3>Vishing</h3>
+              <p>Engenharia social por chamadas de voz, normalmente com urgência e falsa autoridade.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- LINKS ÚTEIS -->
+        <section id="links" class="fade" aria-labelledby="links-title">
+          <span class="eyebrow">Recursos</span>
+          <h2 id="links-title" class="section-title">Links úteis</h2>
+          <p class="intro">
+            Canais oficiais para denunciar, aprender mais e buscar ajuda.
+          </p>
+
+          <div class="links">
+            <a class="link" href="https://www.cert.br/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <b>CERT.br</b>
+                <span>Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil.</span>
+              </div>
+              <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+            <a class="link" href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <b>Cartilha de Segurança para Internet</b>
+                <span>Material brasileiro de referência para prevenção de golpes e incidentes.</span>
+              </div>
+              <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+            <a class="link" href="https://stats.cert.br/incidentes/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <b>Estatísticas CERT.br</b>
+                <span>Dados e tendências de incidentes notificados voluntariamente.</span>
+              </div>
+              <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+            <a class="link" href="/denunciar/denunciar.html">
+              <div>
+                <b>CTUOS — Relatar Golpe</b>
+                <span>Ajude outras pessoas denunciando um caso de engenharia social.</span>
+              </div>
+              <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+          </div>
+        </section>
+
+        <!-- SOBRE O CURSO -->
+        <section class="about fade" aria-labelledby="about-title">
+          <h2 id="about-title" class="section-title">Sobre este curso</h2>
+          <div class="aboutgrid">
+            <div>
+              <span>Autor</span>
+              <p>Equipe CTUOS — Centro de Inteligência Cibernética</p>
+            </div>
+            <div>
+              <span>Versão</span>
+              <p>1.0.0</p>
+            </div>
+            <div>
+              <span>Publicado</span>
+              <p>Setembro de 2026</p>
+            </div>
+            <div>
+              <span>Licença</span>
+              <p>Material de uso educacional. Reprodução permitida com créditos ao CTUOS.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p style="margin:0;">
+        <strong style="color:var(--gold);">CTUOS</strong> — Centro de Inteligência Cibernética.
+        © <span id="footerYear"></span> Todos os direitos reservados.
+      </p>
+      <p style="margin:8px 0 0;font-size:0.72rem;opacity:0.7;">
+        Material educacional produzido pela equipe CTUOS.
+      </p>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <button id="up" class="up" type="button" aria-label="Voltar ao topo">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== MODAL CERTIFICADO ===== -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cert-title">
+      <div class="modalbox">
+        <div class="modalhead">
+          <div>
+            <span class="eyebrow">Conclusão do curso</span>
+            <h2 id="cert-title" class="section-title" style="font-size:1.3rem;">Seu certificado</h2>
+          </div>
+          <button id="close" class="close" type="button" aria-label="Fechar">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form id="cert-form" class="form">
+          <label for="name">Digite seu nome para gerar o certificado</label>
+          <input id="name" type="text" maxlength="70" placeholder="Seu nome completo" required>
+          <button class="btn gold" type="submit" style="width:100%;margin-top:14px;">
+            <i class="fa-solid fa-certificate"></i> Gerar certificado
+          </button>
+        </form>
+
+        <div id="certificate" class="cert">
+          <div class="brand">CTU<em>OS</em></div>
+          <h2>Certificado de Conclusão</h2>
+          <p>Este certificado confirma que</p>
+          <div id="cert-name" class="certname"></div>
+          <p>concluiu o curso “Engenharia Social” com carga horária estimada de 25 minutos.</p>
+          <span id="cert-date" class="signature"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/aprender/engenharia-social.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    // Ano no footer
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

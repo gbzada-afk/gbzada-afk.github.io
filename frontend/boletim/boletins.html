@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boletins - CTUOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/boletim/boletins.css" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <a href="/" class="logo">CTU<span>OS</span></a>
+                <span class="logo-sub">Centro de Inteligência Cibernética</span>
+            </div>
+
+            <div class="header-right">
+
+                <!-- Busca no header (desktop) -->
+                <div class="header-search" id="headerSearch">
+                    <span class="search-icon"><i class="fa-solid fa-search"></i></span>
+                    <input type="text" id="headerSearchInput" placeholder="Pesquisar boletins..." />
+                </div>
+
+                <!-- Deslogado: botões Entrar/Criar -->
+                <div class="header-guest" id="headerGuest">
+                    <button class="btn-entrar" id="headerLoginBtn">Entrar</button>
+                    <button class="btn-cadastrar" id="headerRegisterBtn">Criar conta</button>
+                </div>
+
+                <!-- Logado: botão de perfil com dropdown -->
+                <div class="user-menu-wrapper" id="userMenuWrapper" style="display:none;">
+                    <button class="user-menu-btn" id="userMenuBtn" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-avatar-small" id="headerAvatar">U</div>
+                        <span class="user-name-small" id="headerUserName">Usuário</span>
+                        <i class="fa-solid fa-chevron-down user-menu-chevron"></i>
+                    </button>
+
+                    <!-- Dropdown -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-dropdown-header">
+                            <div class="user-avatar-large" id="dropdownAvatar">U</div>
+                            <div class="user-dropdown-info">
+                                <div class="user-dropdown-name" id="dropdownName">Usuário</div>
+                                <div class="user-dropdown-email" id="dropdownEmail">email@exemplo.com</div>
+                            </div>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <a href="/conta/perfil.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Meu Perfil</span>
+                        </a>
+                        <a href="/conta/configuracoes.html" class="user-dropdown-item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Configurações</span>
+                        </a>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <!-- Menu principal (mesma coisa do sidebar) -->
+                        <a href="/" class="user-dropdown-item">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Início</span>
+                        </a>
+                        <a href="/boletim/boletins.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-newspaper"></i>
+                            <span>Boletins</span>
+                        </a>
+                        <a href="/denunciar/denunciar.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span>Relatar Golpe</span>
+                        </a>
+                        <a href="/estatisticas/estatisticas.html" class="user-dropdown-item">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>Estatísticas</span>
+                        </a>
+                        <a href="/aprender/aprender.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-circle-question"></i>
+                            <span>Guias</span>
+                        </a>
+                        <a href="/sobre/sobre.html" class="user-dropdown-item">
+                            <i class="fa-regular fa-building"></i>
+                            <span>Sobre</span>
+                        </a>
+
+
+                        <div id="dropdownAdminLinks" style="display:none;">
+                            <div class="user-dropdown-divider"></div>
+                            <div class="user-dropdown-label">Admin</div>
+                            <a href="/admin" class="user-dropdown-item">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                <span>Dashboard</span>
+                            </a>
+                            <a href="/admin/reports" class="user-dropdown-item">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                <span>Gerenciar Denúncias</span>
+                            </a>
+                            <a href="/admin/bulletins" class="user-dropdown-item">
+                                <i class="fa-regular fa-newspaper"></i>
+                                <span>Gerenciar Boletins</span>
+                            </a>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <!-- Seletor de tema -->
+                        <div class="user-dropdown-theme">
+                            <div class="user-dropdown-label">
+                                <i class="fa-solid fa-palette"></i> Tema
+                            </div>
+                            <div class="theme-options">
+                                <button class="theme-btn" data-theme="default" title="Dourado"><span class="theme-dot theme-dot-gold"></span></button>
+                                <button class="theme-btn" data-theme="blue" title="Azul"><span class="theme-dot theme-dot-blue"></span></button>
+                                <button class="theme-btn" data-theme="green" title="Verde"><span class="theme-dot theme-dot-green"></span></button>
+                                <button class="theme-btn" data-theme="purple" title="Roxo"><span class="theme-dot theme-dot-purple"></span></button>
+                                <button class="theme-btn" data-theme="red" title="Vermelho"><span class="theme-dot theme-dot-red"></span></button>
+                            </div>
+                        </div>
+
+                        <div class="user-dropdown-divider"></div>
+
+                        <button class="user-dropdown-item danger" id="dropdownLogout">
+                            <i class="fa-solid fa-sign-out-alt"></i>
+                            <span>Sair</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hamburger (mobile) -->
+
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SIDEBAR (mobile) ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="/" class="logo">CTU<span>OS</span></a>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+
+        <div class="sidebar-user" id="sidebarUser">
+            <div class="user-avatar"><i class="fa-regular fa-user"></i></div>
+            <div class="user-info">
+                <div class="user-name" id="sidebarUserName">Visitante</div>
+                <div class="user-email" id="sidebarUserEmail">faça login para acessar</div>
+            </div>
+            <div class="user-status"><span class="dot"></span><span id="sidebarUserStatus">off</span></div>
+        </div>
+
+        <a href="#" id="sidebarLoginBtn"><span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>Entrar</a>
+        <a href="#" id="sidebarRegisterBtn"><span class="icon"><i class="fa-regular fa-user-plus"></i></span>Criar conta</a>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="/"><span class="icon"><i class="fa-solid fa-house"></i></span>Início</a>
+        <a href="/boletim/boletins.html"><span class="icon"><i class="fa-regular fa-newspaper"></i></span>Boletins</a>
+        <a href="/denunciar/denunciar.html"><span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>Relatar Golpe</a>
+        <a href="/estatisticas/estatisticas.html"><span class="icon"><i class="fa-solid fa-chart-simple"></i></span>Estatísticas</a>
+        <a href="/aprender/aprender.html"><span class="icon"><i class="fa-regular fa-circle-question"></i></span>Guias</a>
+        <a href="/conta/perfil.html"><span class="icon"><i class="fa-regular fa-user"></i></span>Meu Perfil</a>
+        <a href="/conta/configuracoes.html"><span class="icon"><i class="fa-solid fa-gear"></i></span>Configurações</a>
+        <a href="/sobre/sobre.html"><span class="icon"><i class="fa-regular fa-building"></i></span>Sobre</a>
+
+        <div class="sidebar-divider"></div>
+
+        <div id="sidebarAdminLinks" style="display:none;">
+            <a href="/admin"><span class="icon"><i class="fa-solid fa-gauge-high"></i></span>Admin Dashboard</a>
+            <a href="/admin/reports"><span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>Gerenciar Denúncias</a>
+            <a href="/admin/bulletins"><span class="icon"><i class="fa-regular fa-newspaper"></i></span>Gerenciar Boletins</a>
+            <div class="sidebar-divider"></div>
+        </div>
+
+        <a href="#" id="sidebarLogout" style="color: var(--status-critical); display:none;">
+            <span class="icon"><i class="fa-solid fa-sign-out-alt"></i></span>Sair
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-theme">
+            <div class="sidebar-theme-label"><i class="fa-solid fa-palette"></i> Tema</div>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="default" title="Dourado"><span class="theme-dot theme-dot-gold"></span></button>
+                <button class="theme-btn" data-theme="blue" title="Azul"><span class="theme-dot theme-dot-blue"></span></button>
+                <button class="theme-btn" data-theme="green" title="Verde"><span class="theme-dot theme-dot-green"></span></button>
+                <button class="theme-btn" data-theme="purple" title="Roxo"><span class="theme-dot theme-dot-purple"></span></button>
+                <button class="theme-btn" data-theme="red" title="Vermelho"><span class="theme-dot theme-dot-red"></span></button>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-footer">© <span id="sidebarYear"></span> — CTUOS</div>
+    </div>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>📰 Boletins</h1>
+                <p>Análises e alertas sobre as últimas fraudes digitais</p>
+            </div>
+        </div>
+
+        <section class="boletins-section">
+            <div class="container">
+
+                <div class="filter-bar">
+                    <span class="filter-label">Filtrar:</span>
+                    <div class="filter-group" id="filterGroup">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="whatsapp">WhatsApp</button>
+                        <button class="filter-btn" data-filter="pix">PIX</button>
+                        <button class="filter-btn" data-filter="marketplace">Marketplace</button>
+                        <button class="filter-btn" data-filter="emprego">Emprego</button>
+                        <button class="filter-btn" data-filter="instagram">Instagram</button>
+                        <button class="filter-btn" data-filter="telegram">Telegram</button>
+                        <button class="filter-btn" data-filter="outros">Outros</button>
+                    </div>
+                    <div class="filter-sort">
+                        <label for="sortSelect">Ordenar:</label>
+                        <select id="sortSelect">
+                            <option value="recent">Mais recentes</option>
+                            <option value="liked">Mais curtidos</option>
+                            <option value="read">Mais lidos</option>
+                            <option value="shared">Mais compartilhados</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="alerts-grid" id="alertsGrid">
+                    <div class="loading-spinner">Carregando boletins...</div>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <button class="page-btn" id="prevPage" disabled>Anterior</button>
+                    <span class="page-info" id="pageInfo">Página 1</span>
+                    <button class="page-btn" id="nextPage">Próxima</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <div class="logo">CTU<span>OS</span></div>
+                <div class="copy">© <span id="footerYear"></span> — Centro de Inteligência Cibernética</div>
+            </div>
+            <div class="footer-col">
+                <h5>Institucional</h5>
+                <a href="/sobre/sobre.html">Sobre</a>
+                <a href="/sobre.html#equipe">Equipe</a>
+                <a href="/sobre.html#missao">Missão</a>
+            </div>
+            <div class="footer-col">
+                <h5>Conteúdo</h5>
+                <a href="/boletim/boletins.html">Boletins</a>
+                <a href="/denunciar/denunciar.html">Relatar</a>
+                <a href="/estatisticas/estatisticas.html">Estatísticas</a>
+                <a href="/aprender/aprender.html">Guias</a>
+                <a href="/conta/configuracoes.html">Configurações</a>
+            </div>
+            <div class="footer-col">
+                <h5>Transparência</h5>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">LGPD</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL DE AUTENTICAÇÃO ===== -->
+    <div class="auth-modal" id="authModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>CTU<span>OS</span></h2>
+                <button class="modal-close" id="authModalClose">&times;</button>
+            </div>
+            <div class="auth-tabs">
+                <button class="active" data-tab="login">Entrar</button>
+                <button data-tab="register">Criar conta</button>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+                <div class="error-message" id="loginError">Credenciais inválidas.</div>
+                <div class="form-group">
+                    <label for="loginIdentifier">E-mail ou usuário <span class="required">*</span></label>
+                    <input type="text" id="loginIdentifier" placeholder="exemplo@email.com ou @usuario" required />
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha <span class="required">*</span></label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <button type="button" class="btn-secondary" id="forgotPasswordBtn">Esqueceu a senha?</button>
+                </div>
+                <div class="auth-footer">Não tem conta? <a id="switchToRegister">Crie uma agora</a></div>
+            </form>
+
+            <form class="auth-form" id="registerForm" style="display:none;">
+                <div class="error-message" id="registerError">Preencha todos os campos.</div>
+                <div class="success-message" id="registerSuccess">Conta criada com sucesso!</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="registerName">Nome <span class="required">*</span></label>
+                        <input type="text" id="registerName" placeholder="Seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUsername">Usuário <span class="required">*</span></label>
+                        <input type="text" id="registerUsername" placeholder="@usuario" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">E-mail <span class="required">*</span></label>
+                    <input type="email" id="registerEmail" placeholder="exemplo@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha <span class="required">*</span></label>
+                    <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirmar senha <span class="required">*</span></label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Digite novamente" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Criar conta</button>
+                </div>
+                <div class="auth-footer">Já tem conta? <a id="switchToLogin">Faça login</a></div>
+            </form>
+
+            <form class="auth-form" id="forgotPasswordForm" style="display:none;">
+                <div class="error-message" id="forgotError">E-mail não encontrado.</div>
+                <div class="success-message" id="forgotSuccess">Link enviado para seu e-mail.</div>
+                <div class="form-group">
+                    <label for="forgotEmail">E-mail <span class="required">*</span></label>
+                    <input type="email" id="forgotEmail" placeholder="exemplo@email.com" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Enviar link</button>
+                    <button type="button" class="btn-secondary" id="backToLoginBtn">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/boletim/boletins.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

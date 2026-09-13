@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Conta - CTUOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/pages/forms.css" />
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <a href="/" class="logo">CTU<span>OS</span></a>
+                <p>Crie sua conta e ajude a combater fraudes</p>
+            </div>
+
+            <form class="auth-form" id="registerForm">
+                <div class="error-message" id="registerError">Preencha todos os campos corretamente.</div>
+                <div class="success-message" id="registerSuccess">Conta criada com sucesso!</div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="registerName">Nome <span class="required">*</span></label>
+                        <input type="text" id="registerName" placeholder="Seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUsername">Usuário <span class="required">*</span></label>
+                        <input type="text" id="registerUsername" placeholder="@usuario" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">E-mail <span class="required">*</span></label>
+                    <input type="email" id="registerEmail" placeholder="exemplo@email.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Senha <span class="required">*</span></label>
+                    <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
+                </div>
+
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirmar senha <span class="required">*</span></label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Digite novamente" required />
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Criar conta</button>
+                </div>
+
+                <div class="auth-footer">
+                    Já tem conta? <a href="/conta/login.html">Faça login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>

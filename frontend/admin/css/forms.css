@@ -1,0 +1,157 @@
+/* ============================================================
+   ADMIN — forms.css
+   Formulários do painel
+   ============================================================ */
+
+.form-group-admin {
+    margin-bottom: 1.2rem;
+}
+
+.form-group-admin label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+}
+
+.form-group-admin label .required {
+    color: var(--status-critical);
+}
+
+.form-group-admin input,
+.form-group-admin select,
+.form-group-admin textarea {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group-admin input:focus,
+.form-group-admin select:focus,
+.form-group-admin textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.form-group-admin textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group-admin select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A961' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 10px 6px;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.form-group-admin select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Form row (2 colunas) */
+.form-row-admin {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-row-admin .form-group-admin {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Checkbox */
+.checkbox-admin {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.checkbox-admin input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-gold);
+    cursor: pointer;
+}
+
+/* File upload */
+.file-upload-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.file-upload-admin .file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-input);
+    border: 1.5px dashed var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1.1rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.file-upload-admin .file-label:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.file-upload-admin .file-name {
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+}
+
+/* Botões de ação do form */
+.form-actions-admin {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* Erro / sucesso */
+.form-message-admin {
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.form-message-admin.error {
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid var(--status-critical);
+    color: var(--status-critical);
+    display: block;
+}
+
+.form-message-admin.success {
+    background: rgba(46, 204, 113, 0.12);
+    border: 1px solid var(--status-low);
+    color: var(--status-low);
+    display: block;
+}

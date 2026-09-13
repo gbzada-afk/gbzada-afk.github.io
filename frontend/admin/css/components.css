@@ -1,0 +1,532 @@
+/* ============================================================
+   ADMIN — components.css
+   Componentes reutilizáveis
+   ============================================================ */
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn-admin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: var(--font-title);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-input);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.btn-admin:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+    background: var(--accent-gold-light);
+    transform: translateY(-1px);
+}
+
+.btn-admin:active {
+    transform: translateY(0);
+}
+
+.btn-admin i {
+    font-size: 0.9rem;
+}
+
+.btn-admin.primary {
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+    border-color: var(--accent-gold);
+}
+
+.btn-admin.primary:hover {
+    background: var(--accent-gold-hover);
+    color: var(--bg-primary);
+}
+
+.btn-admin.danger {
+    background: transparent;
+    color: var(--status-critical);
+    border-color: var(--status-critical);
+}
+
+.btn-admin.danger:hover {
+    background: var(--status-critical);
+    color: white;
+}
+
+.btn-admin.success {
+    background: transparent;
+    color: var(--status-low);
+    border-color: var(--status-low);
+}
+
+.btn-admin.success:hover {
+    background: var(--status-low);
+    color: var(--bg-primary);
+}
+
+.btn-admin.ghost {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-admin.ghost:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.btn-admin.sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.72rem;
+}
+
+.btn-admin.lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.9rem;
+}
+
+.btn-admin.block {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge-admin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: var(--font-title);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    background: var(--bg-input);
+    white-space: nowrap;
+}
+
+.badge-admin i { font-size: 0.7rem; }
+
+.badge-admin.pending {
+    color: var(--status-high);
+    border-color: var(--status-high);
+    background: rgba(243, 156, 18, 0.08);
+}
+
+.badge-admin.approved {
+    color: var(--status-low);
+    border-color: var(--status-low);
+    background: rgba(46, 204, 113, 0.08);
+}
+
+.badge-admin.rejected {
+    color: var(--status-critical);
+    border-color: var(--status-critical);
+    background: rgba(231, 76, 60, 0.08);
+}
+
+.badge-admin.published {
+    color: var(--status-info);
+    border-color: var(--status-info);
+    background: rgba(52, 152, 219, 0.08);
+}
+
+.badge-admin.gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-light);
+}
+
+.badge-admin.critical {
+    color: var(--status-critical);
+    border-color: var(--status-critical);
+    background: rgba(231, 76, 60, 0.08);
+}
+
+.badge-admin.high {
+    color: var(--status-high);
+    border-color: var(--status-high);
+    background: rgba(243, 156, 18, 0.08);
+}
+
+.badge-admin.medium {
+    color: var(--status-medium);
+    border-color: var(--status-medium);
+    background: rgba(241, 196, 15, 0.08);
+}
+
+.badge-admin.low {
+    color: var(--status-low);
+    border-color: var(--status-low);
+    background: rgba(46, 204, 113, 0.08);
+}
+
+/* ============================================================
+   CARDS DE ESTATÍSTICA
+   ============================================================ */
+.stats-grid-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card-admin {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card-admin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--accent-gold);
+    border-radius: 0 0 2px 2px;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.stat-card-admin:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-card-admin:hover::before {
+    opacity: 1;
+}
+
+.stat-card-admin .stat-icon {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-card-admin .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: var(--font-title);
+    color: var(--accent-gold);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.3rem;
+}
+
+.stat-card-admin .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+/* ============================================================
+   CARDS GENÉRICOS
+   ============================================================ */
+.card-admin {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all var(--transition-base);
+}
+
+.card-admin:hover {
+    border-color: var(--accent-gold);
+}
+
+.card-admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-admin-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-admin-title i {
+    color: var(--accent-gold);
+}
+
+/* ============================================================
+   LISTA DE ITENS
+   ============================================================ */
+.list-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-admin {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    transition: all var(--transition-base);
+}
+
+.item-admin:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item-admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+
+.item-admin-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.item-admin-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.6rem;
+}
+
+.item-admin-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.item-admin-body {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.item-admin-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
+   TABELAS
+   ============================================================ */
+.table-admin {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    font-size: 0.85rem;
+}
+
+.table-admin thead {
+    background: var(--bg-input);
+}
+
+.table-admin th {
+    text-align: left;
+    padding: 0.8rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-gold);
+    font-family: var(--font-title);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.table-admin td {
+    padding: 0.8rem 1rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+}
+
+.table-admin tbody tr:hover td {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.table-admin tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================================
+   FILTROS
+   ============================================================ */
+.filter-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+}
+
+.filter-admin-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-right: 0.5rem;
+}
+
+.filter-admin-btn {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-body);
+}
+
+.filter-admin-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: var(--accent-gold-light);
+}
+
+.filter-admin-btn.active {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--bg-primary);
+    font-weight: 600;
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+.loading-admin {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    grid-column: 1 / -1;
+}
+
+.loading-admin::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-subtle);
+    border-top-color: var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty-admin {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-tertiary);
+}
+
+.empty-admin i {
+    font-size: 3rem;
+    color: var(--text-tertiary);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.empty-admin p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.empty-admin small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 640px) {
+    .stats-grid-admin {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+
+    .stat-card-admin { padding: 1rem 0.8rem; }
+    .stat-card-admin .stat-number { font-size: 1.5rem; }
+
+    .item-admin-actions { flex-direction: column; }
+    .item-admin-actions .btn-admin {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .stats-grid-admin { grid-template-columns: 1fr; }
+}

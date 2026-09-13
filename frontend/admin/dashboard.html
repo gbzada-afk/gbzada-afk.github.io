@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTUOS Admin — Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS do Admin -->
+    <link rel="stylesheet" href="/admin/css/global.css" />
+    <link rel="stylesheet" href="/admin/css/components.css" />
+    <link rel="stylesheet" href="/admin/css/layout.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-left">
+                <a href="/admin" class="admin-logo">
+                    CTU<span>OS</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+
+                <nav class="admin-nav">
+                    <a href="/admin">Início</a>
+                    <a href="/admin/dashboard" class="active">Dashboard</a>
+                    <a href="/admin/reports">Denúncias</a>
+                    <a href="/admin/bulletins">Boletins</a>
+                    <a href="/admin/statistics">Estatísticas</a>
+                    <a href="/admin/settings">Configurações</a>
+                </nav>
+            </div>
+
+            <div class="admin-header-right">
+                <a href="/" class="btn-admin ghost sm" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Ver site
+                </a>
+
+                <div class="admin-user">
+                    <div class="admin-user-avatar" id="adminAvatar">A</div>
+                    <span class="admin-user-name" id="adminName">Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>📊 Dashboard</h1>
+                <p>Visão geral do CTUOS</p>
+            </div>
+        </div>
+
+        <section class="admin-page">
+            <div class="container">
+
+                <div class="page-actions">
+                    <button class="btn-admin" id="refreshBtn">
+                        <i class="fa-solid fa-rotate"></i> Atualizar
+                    </button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid-admin">
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-regular fa-file-lines"></i></span>
+                        <div class="stat-number" id="totalReports">--</div>
+                        <div class="stat-label">Total Denúncias</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-solid fa-clock"></i></span>
+                        <div class="stat-number" id="pendingReports">--</div>
+                        <div class="stat-label">Pendentes</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <div class="stat-number" id="approvedReports">--</div>
+                        <div class="stat-label">Aprovadas</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-regular fa-newspaper"></i></span>
+                        <div class="stat-number" id="publishedReports">--</div>
+                        <div class="stat-label">Publicadas</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-regular fa-newspaper"></i></span>
+                        <div class="stat-number" id="totalBulletins">--</div>
+                        <div class="stat-label">Boletins</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-regular fa-eye"></i></span>
+                        <div class="stat-number" id="totalViews">--</div>
+                        <div class="stat-label">Visualizações</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-solid fa-share"></i></span>
+                        <div class="stat-number" id="totalShares">--</div>
+                        <div class="stat-label">Compartilhamentos</div>
+                    </div>
+
+                    <div class="stat-card-admin">
+                        <span class="stat-icon"><i class="fa-regular fa-user"></i></span>
+                        <div class="stat-number" id="totalUsers">--</div>
+                        <div class="stat-label">Usuários</div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="card-admin">
+                    <div class="card-admin-header">
+                        <div class="card-admin-title">
+                            <i class="fa-solid fa-chart-line"></i> Denúncias nos últimos 7 dias
+                        </div>
+                    </div>
+                    <div class="chart-admin-bars" id="timelineChart">
+                        <div class="loading-admin">Carregando dados...</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-admin">
+        <div class="footer-brand">CTU<span>OS</span> — Painel Administrativo</div>
+        <div>© <span id="footerYear"></span> CTUOS. Todos os direitos reservados.</div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/admin/js/admin-guard.js"></script>
+    <script src="/admin/js/cmsApi.js"></script>
+    <script src="/admin/js/dashboard.js"></script>
+    <script>
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTUOS Admin — Painel Administrativo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS do Admin -->
+    <link rel="stylesheet" href="/admin/css/global.css" />
+    <link rel="stylesheet" href="/admin/css/components.css" />
+    <link rel="stylesheet" href="/admin/css/layout.css" />
+
+    <style>
+        /* Estilos específicos da landing */
+        .admin-landing {
+            padding: 3rem 0 4rem;
+        }
+
+        .landing-hero {
+            text-align: center;
+            padding: 3rem 0 4rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .landing-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .landing-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            background: var(--accent-gold-light);
+        }
+
+        .landing-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--font-title);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .landing-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .landing-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid de atalhos */
+        .landing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .landing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 2rem 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .landing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .landing-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .landing-card:hover::before {
+            opacity: 1;
+        }
+
+        .landing-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-sm);
+            background: var(--accent-gold-light);
+            border: 1px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            transition: all 0.3s;
+        }
+
+        .landing-card:hover .landing-card-icon {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            transform: scale(1.08);
+        }
+
+        .landing-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: var(--font-title);
+            color: var(--text-primary);
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .landing-card p {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+
+        .landing-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-family: var(--font-title);
+            margin-top: 0.5rem;
+        }
+
+        .landing-card:hover .landing-card-footer i {
+            transform: translateX(4px);
+        }
+
+        .landing-card-footer i {
+            transition: transform 0.3s;
+        }
+
+        /* Boas-vindas ao usuário */
+        .welcome-box {
+            background: linear-gradient(135deg,
+                    var(--accent-gold-light) 0%,
+                    var(--bg-card) 100%);
+            border: 1px solid var(--accent-gold);
+            border-radius: var(--radius);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .welcome-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--accent-gold-light);
+            border: 3px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-family: var(--font-title);
+            flex-shrink: 0;
+        }
+
+        .welcome-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .welcome-info h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: var(--font-title);
+            margin-bottom: 0.2rem;
+            color: var(--text-primary);
+        }
+
+        .welcome-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            .landing-hero h1 {
+                font-size: 2rem;
+            }
+
+            .landing-hero p {
+                font-size: 0.95rem;
+            }
+
+            .landing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-left">
+                <a href="/admin" class="admin-logo">
+                    CTU<span>OS</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+
+                <nav class="admin-nav">
+                    <a href="/admin" class="active">Início</a>
+                    <a href="/admin/dashboard">Dashboard</a>
+                    <a href="/admin/reports">Denúncias</a>
+                    <a href="/admin/bulletins">Boletins</a>
+                    <a href="/admin/statistics">Estatísticas</a>
+                    <a href="/admin/settings">Configurações</a>
+                </nav>
+            </div>
+
+            <div class="admin-header-right">
+                <a href="/" class="btn-admin ghost sm" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Ver site
+                </a>
+
+                <div class="admin-user" onclick="window.location.href='/conta/perfil.html'">
+                    <div class="admin-user-avatar" id="adminAvatar">A</div>
+                    <span class="admin-user-name" id="adminName">Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main>
+        <section class="admin-landing">
+            <div class="container">
+
+                <!-- HERO -->
+                <div class="landing-hero">
+                    <div class="landing-badge">🛡️ Painel Administrativo</div>
+                    <h1>Bem-vindo ao <span>CTUOS</span> Admin</h1>
+                    <p>Gerencie denúncias, publique boletins e acompanhe as estatísticas do sistema.</p>
+                </div>
+
+                <!-- BOAS-VINDAS -->
+                <div class="welcome-box">
+                    <div class="welcome-avatar" id="welcomeAvatar">A</div>
+                    <div class="welcome-info">
+                        <h2 id="welcomeName">Administrador</h2>
+                        <p id="welcomeEmail">admin@ctuos.org</p>
+                    </div>
+                </div>
+
+                <!-- ATALHOS -->
+                <div class="landing-grid">
+
+                    <a href="/admin/dashboard" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Dashboard</h3>
+                        <p>Visão geral com números de denúncias, boletins e usuários em tempo real.</p>
+                        <div class="landing-card-footer">
+                            Acessar <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="/admin/reports" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-regular fa-file-lines"></i>
+                        </div>
+                        <h3>Denúncias</h3>
+                        <p>Analise, aprove, rejeite ou publique denúncias recebidas pelos usuários.</p>
+                        <div class="landing-card-footer">
+                            Acessar <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="/admin/bulletins" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-regular fa-newspaper"></i>
+                        </div>
+                        <h3>Boletins</h3>
+                        <p>Crie, edite e gerencie os boletins informativos publicados no site.</p>
+                        <div class="landing-card-footer">
+                            Acessar <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="/admin/statistics" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <h3>Estatísticas</h3>
+                        <p>Análises detalhadas por plataforma, estado e evolução temporal.</p>
+                        <div class="landing-card-footer">
+                            Acessar <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="/admin/settings" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <h3>Configurações</h3>
+                        <p>Personalize o site, gerencie segurança, notificações e manutenção.</p>
+                        <div class="landing-card-footer">
+                            Acessar <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="/" class="landing-card">
+                        <div class="landing-card-icon">
+                            <i class="fa-solid fa-external-link-alt"></i>
+                        </div>
+                        <h3>Ver Site</h3>
+                        <p>Abra o site público do CTUOS em uma nova aba para conferir o resultado.</p>
+                        <div class="landing-card-footer">
+                            Abrir <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-admin">
+        <div class="footer-brand">CTU<span>OS</span> — Painel Administrativo</div>
+        <div>© <span id="footerYear"></span> CTUOS. Todos os direitos reservados.</div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+            // Preencher dados do usuário (se logado)
+            if (typeof Auth !== 'undefined' && Auth.init) {
+                Auth.init();
+            }
+
+            setTimeout(function () {
+                const user = typeof Auth !== 'undefined' ? Auth.getUser() : null;
+                if (user) {
+                    const initial = (user.avatar || user.username || 'A').charAt(0).toUpperCase();
+                    document.getElementById('adminAvatar').textContent = initial;
+                    document.getElementById('adminName').textContent = user.name || user.username;
+                    document.getElementById('welcomeAvatar').textContent = initial;
+                    document.getElementById('welcomeName').textContent = user.name || user.username;
+                    document.getElementById('welcomeEmail').textContent = user.email || '';
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

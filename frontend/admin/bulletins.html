@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTUOS Admin — Boletins</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/admin/css/global.css" />
+    <link rel="stylesheet" href="/admin/css/components.css" />
+    <link rel="stylesheet" href="/admin/css/layout.css" />
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-left">
+                <a href="/admin" class="admin-logo">
+                    CTU<span>OS</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+
+                <nav class="admin-nav">
+                    <a href="/admin">Início</a>
+                    <a href="/admin">Dashboard</a>
+                    <a href="/admin/reports">Denúncias</a>
+                    <a href="/admin/bulletins" class="active">Boletins</a>
+                    <a href="/admin/statistics">Estatísticas</a>
+                    <a href="/admin/settings">Configurações</a>
+                </nav>
+            </div>
+
+            <div class="admin-header-right">
+                <a href="/" class="btn-admin ghost sm" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Ver site
+                </a>
+
+                <div class="admin-user">
+                    <div class="admin-user-avatar" id="adminAvatar">A</div>
+                    <span class="admin-user-name" id="adminName">Admin</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>📰 Boletins</h1>
+                <p>Publique e gerencie boletins informativos</p>
+            </div>
+        </div>
+
+        <section class="admin-page">
+            <div class="container">
+
+                <!-- Ações -->
+                <div class="page-actions">
+                    <a href="/admin/bulletin-editor" class="btn-admin primary">
+                        <i class="fa-solid fa-plus"></i> Novo Boletim
+                    </a>
+                </div>
+
+                <!-- Filtros -->
+                <div class="filter-admin">
+                    <span class="filter-admin-label">Categoria:</span>
+                    <button class="filter-admin-btn active" data-filter="all">Todos</button>
+                    <button class="filter-admin-btn" data-filter="whatsapp">WhatsApp</button>
+                    <button class="filter-admin-btn" data-filter="pix">PIX</button>
+                    <button class="filter-admin-btn" data-filter="marketplace">Marketplace</button>
+                    <button class="filter-admin-btn" data-filter="emprego">Emprego</button>
+                    <button class="filter-admin-btn" data-filter="instagram">Instagram</button>
+                    <button class="filter-admin-btn" data-filter="telegram">Telegram</button>
+                    <button class="filter-admin-btn" data-filter="outros">Outros</button>
+                </div>
+
+                <!-- Lista -->
+                <div class="list-admin" id="bulletinsList">
+                    <div class="loading-admin">Carregando boletins...</div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-admin">
+        <div class="footer-brand">CTU<span>OS</span> — Painel Administrativo</div>
+        <div>© <span id="footerYear"></span> CTUOS. Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="/admin/js/admin-guard.js"></script>
+    <script src="/admin/js/cmsApi.js"></script>
+    <script src="/admin/js/bulletins.js"></script>
+    <script>
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

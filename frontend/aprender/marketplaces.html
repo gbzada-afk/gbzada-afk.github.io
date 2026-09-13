@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golpes em Marketplaces — Curso CTUOS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/aprender/marketplaces.css">
+</head>
+
+<body>
+
+  <!-- READING PROGRESS -->
+  <div class="reading">
+    <div id="reading-progress"></div>
+  </div>
+
+  <!-- TOP HEADER -->
+  <header class="top">
+    <div class="topin">
+      <a class="brand" href="/aprender/aprender.html" aria-label="CTUOS, início">
+        CTU<em>OS</em>
+      </a>
+      <span class="toplabel">Curso · Marketplaces</span>
+      <button id="toggle" class="hamb" type="button" aria-label="Abrir índice" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+
+    <!-- SIDEBAR -->
+    <aside id="side" class="side" aria-label="Índice do curso">
+      <span class="eyebrow">Índice</span>
+      <nav class="nav">
+        <a class="active" href="#inicio">Visão geral</a>
+        <a href="#modulo-1">01 — Por que é alvo</a>
+        <a href="#modulo-2">02 — Tipos de golpe</a>
+        <a href="#modulo-3">03 — Como identificar</a>
+        <a href="#modulo-4">04 — Comprar com segurança</a>
+        <a href="#modulo-5">05 — Se você caiu</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#glossario">Glossário</a>
+        <a href="#links">Links úteis</a>
+      </nav>
+      <div class="progressbox">
+        <div class="progressrow">
+          <span>Progresso</span>
+          <span id="visited">0%</span>
+        </div>
+        <div class="bar">
+          <div id="module-progress"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- HERO -->
+      <section id="inicio" class="hero fade" aria-labelledby="course-title">
+        <span class="badge">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Curso CTUOS
+        </span>
+        <div class="hero-grid">
+          <div>
+            <h1 id="course-title">Golpes em Marketplaces</h1>
+            <p class="subtitle">
+              Anúncios falsos, vendedores fraudulentos e pedidos que nunca chegam. Aprenda a comprar com segurança.
+            </p>
+            <div class="meta">
+              <span class="pill"><i class="fa-solid fa-signal"></i> Iniciante</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 20 minutos</span>
+              <span class="pill"><i class="fa-regular fa-folder"></i> 5 módulos</span>
+              <span class="pill"><i class="fa-solid fa-certificate"></i> Certificado</span>
+            </div>
+            <a class="btn gold" href="#modulo-1">
+              Começar curso
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+          <div class="shop" aria-hidden="true">🏪</div>
+        </div>
+      </section>
+
+      <!-- MÓDULO 1 -->
+      <section id="modulo-1" class="fade course-module" aria-labelledby="m1">
+        <span class="eyebrow">Módulo 01</span>
+        <h2 id="m1" class="section-title">Por que marketplaces são alvo</h2>
+        <p class="intro">
+          Plataformas como OLX, Mercado Livre, Shopee, Enjoei e Facebook Marketplace movimentam bilhões por ano. Criminosos sabem disso — e exploram brechas para enganar compradores e vendedores.
+        </p>
+
+        <div class="grid2">
+          <article class="card">
+            <h3>Volume gigantesco</h3>
+            <p>Milhões de anúncios são criados todos os dias. Fica impossível revisar tudo manualmente — e é aí que os golpes se escondem.</p>
+          </article>
+          <article class="card">
+            <h3>Facilidade de criar contas falsas</h3>
+            <p>Em alguns casos, basta um e-mail ou telefone temporário. O criminoso age sem deixar rastro facilmente verificável.</p>
+          </article>
+        </div>
+
+        <div class="statgrid">
+          <div class="stat">
+            <b>R$ 400 bi</b>
+            <span>é o volume anual estimado de transações em marketplaces no Brasil.</span>
+          </div>
+          <div class="stat">
+            <b>+250%</b>
+            <span>crescimento de reclamações envolvendo golpes em marketplaces nos últimos 3 anos.</span>
+          </div>
+          <div class="stat">
+            <b>5 min</b>
+            <span>é o tempo médio que um golpista leva para publicar um anúncio falso.</span>
+          </div>
+        </div>
+
+        <p class="note">
+          Dados de referência para conscientização. Números variam conforme metodologia e fonte.
+        </p>
+      </section>
+
+      <!-- MÓDULO 2 -->
+      <section id="modulo-2" class="fade course-module" aria-labelledby="m2">
+        <span class="eyebrow">Módulo 02</span>
+        <h2 id="m2" class="section-title">Tipos de golpe</h2>
+        <p class="intro">
+          Estes são os golpes mais comuns em marketplaces. Reconheça o padrão e você evita 90% deles.
+        </p>
+
+        <div class="types">
+          <article class="type">
+            <h3>Produto que não existe</h3>
+            <p>O vendedor anuncia algo que nunca vai entregar. Você paga e não recebe nada.</p>
+          </article>
+          <article class="type">
+            <h3>Produto diferente do anunciado</h3>
+            <p>Chega um item parecido, mas inferior, falsificado ou em más condições.</p>
+          </article>
+          <article class="type">
+            <h3>Produto roubado</h3>
+            <p>Preço muito baixo e vendedor sem histórico. Pode ser mercadoria ilegal.</p>
+          </article>
+          <article class="type">
+            <h3>Falso comprovante de pagamento</h3>
+            <p>O "comprador" envia um print de PIX falso e insiste que você entregue.</p>
+          </article>
+          <article class="type">
+            <h3>Falsa transportadora</h3>
+            <p>Cobram "taxa de liberação" ou "frete" fora da plataforma.</p>
+          </article>
+          <article class="type">
+            <h3>Golpe do frete</h3>
+            <p>O "vendedor" pede o frete por PIX direto, fora da plataforma, e desaparece.</p>
+          </article>
+          <article class="type">
+            <h3>Golpe do "é seu vizinho"</h3>
+            <p>Alguém finge morar perto para pegar mais rápido — e nunca aparece.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MÓDULO 3 -->
+      <section id="modulo-3" class="fade course-module" aria-labelledby="m3">
+        <span class="eyebrow">Módulo 03</span>
+        <h2 id="m3" class="section-title">Como identificar anúncios falsos</h2>
+        <p class="intro">
+          Veja um exemplo real de anúncio falso e depois confira o checklist de sinais de alerta.
+        </p>
+
+        <div class="fake-ad">
+          <div class="fake-ad-thumb">📱</div>
+          <div class="fake-ad-body">
+            <div class="fake-ad-title">iPhone 15 Pro Max 256GB — lacrado na caixa</div>
+            <div class="fake-ad-price">R$ 1.200,00</div>
+            <div class="fake-ad-desc">
+              "Vendo porque viajei. Só aceito PIX, entrego hoje. Sem tempo pra mostrar funcionando. Foto é a da internet. Não aceito encontro presencial."
+            </div>
+          </div>
+        </div>
+
+        <div class="warning">
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Preço muito abaixo do mercado. iPhone 15 Pro Max novo custa a partir de R$ 7.000.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Só aceita PIX. Recusa cartão, boleto ou pagamento pela plataforma.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Pressa excessiva. "Vendo hoje", "só agora", "sem tempo".</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Recusa encontro presencial ou verificação do produto.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Fotos genéricas (retiradas do Google) e perfil sem histórico.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Quer negociar fora da plataforma (WhatsApp, Telegram, e-mail).</span>
+          </div>
+        </div>
+
+        <div class="checklist">
+          <h3>Checklist antes de comprar</h3>
+          <p>Adote esses hábitos e reduza drasticamente o risco:</p>
+
+          <label class="check">
+            <input class="safecheck" data-key="price" type="checkbox">
+            <span>O preço está dentro do mercado (não muito abaixo).</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="reputation" type="checkbox">
+            <span>O vendedor tem histórico e boas avaliações.</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="payment" type="checkbox">
+            <span>Vou pagar dentro da plataforma (não por PIX direto).</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="meeting" type="checkbox">
+            <span>Vou encontrar em local público, com acompanhante.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- MÓDULO 4 -->
+      <section id="modulo-4" class="fade course-module" aria-labelledby="m4">
+        <span class="eyebrow">Módulo 04</span>
+        <h2 id="m4" class="section-title">Como comprar com segurança</h2>
+        <p class="intro">
+          Essas 8 práticas reduzem drasticamente o risco de cair em golpe.
+        </p>
+
+        <div class="steps">
+          <div>Prefira plataformas grandes e conhecidas, com sistema de proteção ao comprador.</div>
+          <div>Confira a reputação do vendedor: histórico, avaliações e tempo de conta.</div>
+          <div>Pague sempre dentro da plataforma. Nunca por PIX, transferência ou boleto direto.</div>
+          <div>Nunca saia da plataforma para negociar. Mantenha tudo registrado no chat oficial.</div>
+          <div>Use cartão de crédito quando possível. Se der problema, você pode pedir estorno.</div>
+          <div>Peça vídeo do produto funcionando, com data e detalhes específicos.</div>
+          <div>Em encontros presenciais, escolha local público e movimentado. Leve acompanhante.</div>
+          <div>Guarde todas as conversas, comprovantes e prints. Eles são prova em caso de golpe.</div>
+        </div>
+      </section>
+
+      <!-- MÓDULO 5 -->
+      <section id="modulo-5" class="fade course-module" aria-labelledby="m5">
+        <span class="eyebrow">Módulo 05</span>
+        <h2 id="m5" class="section-title">Se você caiu</h2>
+        <p class="intro">
+          Caiu em um golpe de marketplace? Aja rápido e siga esta ordem:
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-file-shield"></i></div>
+            <h3>Reúna as provas</h3>
+            <p>Prints da conversa, comprovante de pagamento, dados do vendedor, anúncio. Salve tudo.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-flag"></i></div>
+            <h3>Reporte na plataforma</h3>
+            <p>Todas as plataformas sérias têm canal de denúncia. Abra o chamado imediatamente.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Registre reclamação</h3>
+            <p>No consumidor.gov.br você fala direto com a empresa, sem intermediários.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-badge-alert"></i></div>
+            <h3>Boletim de ocorrência</h3>
+            <p>Registre na Delegacia Virtual do seu estado. Guarde o número do BO.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="fa-solid fa-credit-card"></i></div>
+            <h3>Conteste no banco</h3>
+            <p>Se pagou com cartão, peça o chargeback. Se pagou com PIX, acione o MED.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz" class="fade" aria-labelledby="quiz-title">
+        <span class="eyebrow">Quiz</span>
+        <h2 id="quiz-title" class="section-title">Teste seu conhecimento</h2>
+        <p class="intro">
+          Dez perguntas rápidas para fixar o conteúdo. Você pode refazer quantas vezes quiser.
+        </p>
+
+        <div class="quiz">
+          <div class="quizhead">
+            <span>Escolha a alternativa mais segura em cada cenário.</span>
+            <span id="score" class="score">0 / 10 corretas</span>
+          </div>
+
+          <div class="questions">
+            <article class="question">
+              <h3>1. Um iPhone 15 Pro Max novo por R$ 1.200 é sinal de:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">Preço muito abaixo do mercado, provável golpe.</button>
+                <button class="answer" data-correct="false">Promoção excelente, compre rápido.</button>
+                <button class="answer" data-correct="false">Vendedor precisando vender urgente.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>2. O vendedor só aceita PIX direto. O que fazer?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Pagar direto, é mais rápido.</button>
+                <button class="answer" data-correct="true">Recusar. Pagar só pela plataforma.</button>
+                <button class="answer" data-correct="false">Negociar desconto pagando PIX.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>3. Qual a melhor forma de pagamento em marketplace?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">PIX direto para o vendedor.</button>
+                <button class="answer" data-correct="false">Transferência bancária.</button>
+                <button class="answer" data-correct="true">Cartão de crédito dentro da plataforma.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>4. O vendedor pede para negociar no WhatsApp, fora da plataforma. É seguro?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Sim, é mais prático.</button>
+                <button class="answer" data-correct="true">Não. Você perde a proteção da plataforma.</button>
+                <button class="answer" data-correct="false">Sim, desde que use PIX.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>5. O comprador enviou um print de PIX. Você deve:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Entregar o produto, o print é prova.</button>
+                <button class="answer" data-correct="true">Conferir o saldo no app do banco antes.</button>
+                <button class="answer" data-correct="false">Pedir outro print mais nítido.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>6. O vendedor diz que não tem tempo para mostrar o produto funcionando:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">É sinal de alerta. Desconfie.</button>
+                <button class="answer" data-correct="false">Tudo bem, é normal.</button>
+                <button class="answer" data-correct="false">Compre mesmo assim.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>7. Vai encontrar o vendedor presencialmente. Onde?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Na casa dele, para ver o produto.</button>
+                <button class="answer" data-correct="true">Em local público e movimentado.</button>
+                <button class="answer" data-correct="false">Em qualquer lugar, tanto faz.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>8. Caiu em um golpe. Qual o primeiro passo?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">Reunir provas (prints, comprovantes).</button>
+                <button class="answer" data-correct="false">Esperar alguns dias para ver se resolve.</button>
+                <button class="answer" data-correct="false">Ligar para o golpista.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>9. Paguei com PIX e caí em golpe. O que fazer?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Aceitar o prejuízo, PIX não volta.</button>
+                <button class="answer" data-correct="true">Acionar o MED junto ao banco.</button>
+                <button class="answer" data-correct="false">Pedir para amigos transferirem.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>10. Qual é a regra de ouro dos marketplaces?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">Não sair da plataforma e não pagar por fora.</button>
+                <button class="answer" data-correct="false">Negociar sempre por fora, mais rápido.</button>
+                <button class="answer" data-correct="false">Pagar PIX direto se o vendedor for simpático.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+          </div>
+
+          <div id="complete" class="complete">
+            <p>Resultado final: <strong id="final"></strong>. Lembre-se: segurança sempre antes da pressa.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button id="retry" class="btn secondary" type="button">
+                <i class="fa-solid fa-rotate-left"></i> Refazer quiz
+              </button>
+              <button id="open-cert" class="btn gold" type="button">
+                <i class="fa-solid fa-certificate"></i> Gerar certificado
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GLOSSÁRIO -->
+      <section id="glossario" class="fade" aria-labelledby="glossary-title">
+        <span class="eyebrow">Glossário</span>
+        <h2 id="glossary-title" class="section-title">Termos importantes</h2>
+
+        <div class="gloss">
+          <article class="card">
+            <h3>Marketplace</h3>
+            <p>Plataforma online que conecta compradores e vendedores (OLX, Mercado Livre, Shopee).</p>
+          </article>
+          <article class="card">
+            <h3>Escrow</h3>
+            <p>Sistema de proteção em que a plataforma segura o pagamento até a entrega.</p>
+          </article>
+          <article class="card">
+            <h3>Chargeback</h3>
+            <p>Estorno feito pelo banco quando o cliente contesta uma compra no cartão.</p>
+          </article>
+          <article class="card">
+            <h3>MED</h3>
+            <p>Mecanismo Especial de Devolução: bloqueia valores de PIX em caso de fraude.</p>
+          </article>
+          <article class="card">
+            <h3>Phishing em marketplace</h3>
+            <p>Falso link de "pagamento seguro" enviado por chat ou e-mail.</p>
+          </article>
+          <article class="card">
+            <h3>Reputação</h3>
+            <p>Histórico de avaliações e tempo de conta do vendedor na plataforma.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- LINKS ÚTEIS -->
+      <section id="links" class="fade" aria-labelledby="links-title">
+        <span class="eyebrow">Recursos</span>
+        <h2 id="links-title" class="section-title">Links úteis</h2>
+        <p class="intro">
+          Canais oficiais para denunciar, reclamar e se proteger.
+        </p>
+
+        <div class="links">
+          <a class="link" href="https://www.consumidor.gov.br/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Consumidor.gov.br</b>
+              <span>Plataforma oficial para reclamação direta contra empresas.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="https://delegaciavirtual.sinesp.gov.br" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Delegacia Virtual</b>
+              <span>Registre boletim de ocorrência online.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="https://www.bcb.gov.br/meubc/faqs/p/o-que-e-e-como-funciona-o-mecanismo-especial-de-devolucao-med" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Banco Central — MED</b>
+              <span>Entenda como funciona a devolução de PIX em caso de fraude.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="/denunciar/denunciar.html">
+            <div>
+              <b>CTUOS — Relatar Golpe</b>
+              <span>Ajude outras pessoas denunciando um golpe de marketplace.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- SOBRE O CURSO -->
+      <section class="about fade" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-title">Sobre este curso</h2>
+        <div class="aboutgrid">
+          <div>
+            <span>Autor</span>
+            <p>Equipe CTUOS — Centro de Inteligência Cibernética</p>
+          </div>
+          <div>
+            <span>Versão</span>
+            <p>1.0.0</p>
+          </div>
+          <div>
+            <span>Publicado</span>
+            <p>Setembro de 2026</p>
+          </div>
+          <div>
+            <span>Licença</span>
+            <p>Material de uso educacional. Reprodução permitida com créditos ao CTUOS.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p style="margin:0;">
+      <strong style="color:var(--gold);">CTUOS</strong> — Centro de Inteligência Cibernética.
+      © <span id="footerYear"></span> Todos os direitos reservados.
+    </p>
+    <p style="margin:8px 0 0;font-size:0.72rem;opacity:0.7;">
+      Material educacional produzido pela equipe CTUOS.
+    </p>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="up" class="up" type="button" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- MODAL CERTIFICADO -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cert-title">
+    <div class="modalbox">
+      <div class="modalhead">
+        <div>
+          <span class="eyebrow">Conclusão do curso</span>
+          <h2 id="cert-title" class="section-title" style="font-size:1.3rem;">Seu certificado</h2>
+        </div>
+        <button id="close" class="close" type="button" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="cert-form" class="form">
+        <label for="name">Digite seu nome para gerar o certificado</label>
+        <input id="name" type="text" maxlength="70" placeholder="Seu nome completo" required>
+        <button class="btn gold" type="submit" style="width:100%;margin-top:14px;">
+          <i class="fa-solid fa-certificate"></i> Gerar certificado
+        </button>
+      </form>
+
+      <div id="certificate" class="cert">
+        <div class="brand">CTU<em>OS</em></div>
+        <h2>Certificado de Conclusão</h2>
+        <p>Este certificado confirma que</p>
+        <div id="cert-name" class="certname"></div>
+        <p>concluiu o curso “Golpes em Marketplaces” com carga horária estimada de 20 minutos.</p>
+        <span id="cert-date" class="signature"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/aprender/marketplaces.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

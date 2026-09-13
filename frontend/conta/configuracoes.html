@@ -1,0 +1,660 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações - CTUOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/pages.css" />
+    <link rel="stylesheet" href="/css/pages/settings.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <a href="/" class="logo">CTU<span>OS</span></a>
+                <span class="logo-sub">Centro de Inteligência Cibernética</span>
+                <nav class="nav-links">
+                    <a href="/">Início</a>
+                    <a href="/boletim/boletins.html">Boletins</a>
+                    <a href="/denunciar/denunciar.html">Relatar Golpe</a>
+                    <a href="/estatisticas/estatisticas.html">Estatísticas</a>
+                    <a href="/aprender/aprender.html">Guias</a>
+                    <a href="/sobre/sobre.html">Sobre</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="btn-entrar" id="headerLoginBtn">Entrar</button>
+                <button class="btn-cadastrar" id="headerRegisterBtn">Criar conta</button>
+                <div class="user-menu" id="userMenu" style="display:none;">
+                    <div class="user-avatar-small" id="headerAvatar">U</div>
+                    <span class="user-name-small" id="headerUserName">Usuário</span>
+                </div>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="/" class="logo">CTU<span>OS</span></a>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+
+        <div class="sidebar-user" id="sidebarUser">
+            <div class="user-avatar"><i class="fa-regular fa-user"></i></div>
+            <div class="user-info">
+                <div class="user-name" id="sidebarUserName">Visitante</div>
+                <div class="user-email" id="sidebarUserEmail">faça login para acessar</div>
+            </div>
+            <div class="user-status"><span class="dot"></span><span id="sidebarUserStatus">off</span></div>
+        </div>
+
+        <a href="#" id="sidebarLoginBtn"><span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>Entrar</a>
+        <a href="#" id="sidebarRegisterBtn"><span class="icon"><i class="fa-regular fa-user-plus"></i></span>Criar conta</a>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="/"><span class="icon"><i class="fa-solid fa-house"></i></span>Início</a>
+        <a href="/boletim/boletins.html"><span class="icon"><i class="fa-regular fa-newspaper"></i></span>Boletins</a>
+        <a href="/denunciar/denunciar.html"><span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>Relatar Golpe</a>
+        <a href="/estatisticas/estatisticas.html"><span class="icon"><i class="fa-solid fa-chart-simple"></i></span>Estatísticas</a>
+        <a href="/aprender/aprender.html"><span class="icon"><i class="fa-regular fa-circle-question"></i></span>Guias</a>
+        <a href="/conta/perfil.html"><span class="icon"><i class="fa-regular fa-user"></i></span>Meu Perfil</a>
+        <a href="/conta/configuracoes.html" class="active"><span class="icon"><i class="fa-solid fa-gear"></i></span>Configurações</a>
+        <a href="/sobre/sobre.html"><span class="icon"><i class="fa-regular fa-building"></i></span>Sobre</a>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Admin Links (só pra admins) -->
+        <div id="sidebarAdminLinks" style="display:none;">
+            <a href="/admin"><span class="icon"><i class="fa-solid fa-gauge-high"></i></span>Admin Dashboard</a>
+            <a href="/admin/reports"><span class="icon"><i class="fa-regular fa-pen-to-square"></i></span>Gerenciar Denúncias</a>
+            <a href="/admin/bulletins"><span class="icon"><i class="fa-regular fa-newspaper"></i></span>Gerenciar Boletins</a>
+            <div class="sidebar-divider"></div>
+        </div>
+
+        <a href="#" id="sidebarLogout" style="color: var(--status-critical); display:none;">
+            <span class="icon"><i class="fa-solid fa-sign-out-alt"></i></span>Sair
+        </a>
+
+        <!-- Seletor de Tema Rápido -->
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-theme">
+            <div class="sidebar-theme-label">
+                <i class="fa-solid fa-palette"></i> Tema Rápido
+            </div>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="default" title="Dourado"><span class="theme-dot theme-dot-gold"></span></button>
+                <button class="theme-btn" data-theme="blue" title="Azul"><span class="theme-dot theme-dot-blue"></span></button>
+                <button class="theme-btn" data-theme="green" title="Verde"><span class="theme-dot theme-dot-green"></span></button>
+                <button class="theme-btn" data-theme="purple" title="Roxo"><span class="theme-dot theme-dot-purple"></span></button>
+                <button class="theme-btn" data-theme="red" title="Vermelho"><span class="theme-dot theme-dot-red"></span></button>
+            </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-footer">© <span id="sidebarYear"></span> — CTUOS</div>
+    </div>
+
+    <!-- ===== CONTEÚDO ===== -->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>⚙️ Configurações</h1>
+                <p>Personalize sua experiência no CTUOS</p>
+            </div>
+        </div>
+
+        <section class="settings-section">
+            <div class="container">
+                <div class="settings-layout">
+
+                    <!-- MENU LATERAL -->
+                    <aside class="settings-menu">
+                        <button class="settings-menu-item active" data-tab="appearance">
+                            <i class="fa-solid fa-palette"></i>
+                            <span>Aparência</span>
+                        </button>
+                        <button class="settings-menu-item" data-tab="notifications">
+                            <i class="fa-solid fa-bell"></i>
+                            <span>Notificações</span>
+                        </button>
+                        <button class="settings-menu-item" data-tab="privacy">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Privacidade</span>
+                        </button>
+                        <button class="settings-menu-item" data-tab="account">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <span>Conta</span>
+                        </button>
+                        <button class="settings-menu-item" data-tab="advanced">
+                            <i class="fa-solid fa-wrench"></i>
+                            <span>Avançado</span>
+                        </button>
+                        <button class="settings-menu-item" data-tab="about">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Sobre</span>
+                        </button>
+                    </aside>
+
+                    <!-- PAINEL DE CONTEÚDO -->
+                    <div class="settings-content">
+
+                        <!-- ========== APARÊNCIA ========== -->
+                        <div class="settings-panel active" id="panel-appearance">
+                            <div class="settings-panel-header">
+                                <h2>🎨 Aparência</h2>
+                                <p>Escolha o tema e ajuste como o site aparece</p>
+                            </div>
+
+                            <!-- Tema -->
+                            <div class="settings-group">
+                                <label class="settings-label">Tema do site</label>
+                                <div class="theme-grid">
+                                    <button class="theme-card" data-theme="default">
+                                        <div class="theme-card-preview theme-preview-gold">
+                                            <div class="preview-bar"></div>
+                                            <div class="preview-line"></div>
+                                            <div class="preview-line short"></div>
+                                        </div>
+                                        <div class="theme-card-info">
+                                            <strong>Dourado</strong>
+                                            <span>Padrão premium</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check theme-card-check"></i>
+                                    </button>
+
+                                    <button class="theme-card" data-theme="blue">
+                                        <div class="theme-card-preview theme-preview-blue">
+                                            <div class="preview-bar"></div>
+                                            <div class="preview-line"></div>
+                                            <div class="preview-line short"></div>
+                                        </div>
+                                        <div class="theme-card-info">
+                                            <strong>Azul Editorial</strong>
+                                            <span>Claro e legível</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check theme-card-check"></i>
+                                    </button>
+
+                                    <button class="theme-card" data-theme="green">
+                                        <div class="theme-card-preview theme-preview-green">
+                                            <div class="preview-bar"></div>
+                                            <div class="preview-line"></div>
+                                            <div class="preview-line short"></div>
+                                        </div>
+                                        <div class="theme-card-info">
+                                            <strong>Verde</strong>
+                                            <span>Esmeralda</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check theme-card-check"></i>
+                                    </button>
+
+                                    <button class="theme-card" data-theme="purple">
+                                        <div class="theme-card-preview theme-preview-purple">
+                                            <div class="preview-bar"></div>
+                                            <div class="preview-line"></div>
+                                            <div class="preview-line short"></div>
+                                        </div>
+                                        <div class="theme-card-info">
+                                            <strong>Roxo</strong>
+                                            <span>Violeta moderno</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check theme-card-check"></i>
+                                    </button>
+
+                                    <button class="theme-card" data-theme="red">
+                                        <div class="theme-card-preview theme-preview-red">
+                                            <div class="preview-bar"></div>
+                                            <div class="preview-line"></div>
+                                            <div class="preview-line short"></div>
+                                        </div>
+                                        <div class="theme-card-info">
+                                            <strong>Vermelho</strong>
+                                            <span>Alerta</span>
+                                        </div>
+                                        <i class="fa-solid fa-circle-check theme-card-check"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Modo de tema -->
+                            <div class="settings-group">
+                                <label class="settings-label">Modo</label>
+                                <div class="settings-radio-group">
+                                    <label class="settings-radio">
+                                        <input type="radio" name="theme-mode" value="manual" checked />
+                                        <span class="radio-mark"></span>
+                                        <div class="radio-content">
+                                            <strong>Manual</strong>
+                                            <span>Escolher um tema específico</span>
+                                        </div>
+                                    </label>
+                                    <label class="settings-radio">
+                                        <input type="radio" name="theme-mode" value="auto" />
+                                        <span class="radio-mark"></span>
+                                        <div class="radio-content">
+                                            <strong>Automático</strong>
+                                            <span>Segue a preferência do sistema</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Compactar cards -->
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Modo compacto</strong>
+                                        <span>Reduzir espaçamento entre os cards</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="settingCompactMode" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Animações -->
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Animações</strong>
+                                        <span>Efeitos visuais e transições</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="settingAnimations" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== NOTIFICAÇÕES ========== -->
+                        <div class="settings-panel" id="panel-notifications">
+                            <div class="settings-panel-header">
+                                <h2>🔔 Notificações</h2>
+                                <p>Escolha o que você quer receber</p>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Novos boletins</strong>
+                                        <span>Avisar quando um novo boletim for publicado</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="notifyNewBulletins" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Status da denúncia</strong>
+                                        <span>Avisar quando sua denúncia for analisada</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="notifyReportStatus" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Alertas críticos</strong>
+                                        <span>Golpes de alta gravidade em tempo real</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="notifyCriticalAlerts" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>E-mail marketing</strong>
+                                        <span>Novidades, guias e dicas</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="notifyMarketing" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== PRIVACIDADE ========== -->
+                        <div class="settings-panel" id="panel-privacy">
+                            <div class="settings-panel-header">
+                                <h2>🔒 Privacidade</h2>
+                                <p>Controle como seus dados são usados</p>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Perfil público</strong>
+                                        <span>Outros usuários podem ver seu nome e avatar</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="privacyPublicProfile" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Mostrar denúncias enviadas</strong>
+                                        <span>Exibir suas denúncias no perfil público</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="privacyShowReports" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Cookies analíticos</strong>
+                                        <span>Ajudar a melhorar o site com dados anônimos</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="privacyAnalytics" checked />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Rastreamento</strong>
+                                        <span>Permitir personalização de conteúdo</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="privacyTracking" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== CONTA ========== -->
+                        <div class="settings-panel" id="panel-account">
+                            <div class="settings-panel-header">
+                                <h2>👤 Conta</h2>
+                                <p>Gerencie sua conta e segurança</p>
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Nome de exibição</label>
+                                <input type="text" class="settings-input" id="accountDisplayName" placeholder="Seu nome" />
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Idioma</label>
+                                <select class="settings-input" id="accountLanguage">
+                                    <option value="pt-BR" selected>Português (Brasil)</option>
+                                    <option value="en-US">English (US)</option>
+                                    <option value="es-ES">Español</option>
+                                </select>
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Formato de data</label>
+                                <select class="settings-input" id="accountDateFormat">
+                                    <option value="DD/MM/YYYY" selected>DD/MM/AAAA</option>
+                                    <option value="MM/DD/YYYY">MM/DD/AAAA</option>
+                                    <option value="YYYY-MM-DD">AAAA-MM-DD</option>
+                                </select>
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Fuso horário</label>
+                                <select class="settings-input" id="accountTimezone">
+                                    <option value="America/Sao_Paulo" selected>(GMT-3) Brasília</option>
+                                    <option value="America/Manaus">(GMT-4) Manaus</option>
+                                    <option value="America/Belem">(GMT-3) Belém</option>
+                                    <option value="America/Fortaleza">(GMT-3) Fortaleza</option>
+                                </select>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-danger-zone">
+                                    <div class="danger-icon">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                    </div>
+                                    <div class="danger-info">
+                                        <strong>Excluir conta</strong>
+                                        <span>Todos os seus dados serão removidos permanentemente</span>
+                                    </div>
+                                    <button class="btn-danger" id="deleteAccountBtn">Excluir</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== AVANÇADO ========== -->
+                        <div class="settings-panel" id="panel-advanced">
+                            <div class="settings-panel-header">
+                                <h2>🔧 Avançado</h2>
+                                <p>Configurações técnicas e experimentais</p>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Modo desenvolvedor</strong>
+                                        <span>Mostrar informações técnicas de debug</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="advancedDevMode" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <div class="settings-toggle">
+                                    <div class="settings-toggle-info">
+                                        <strong>Recursos experimentais</strong>
+                                        <span>Ativar funcionalidades em teste</span>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="advancedBeta" />
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Ações rápidas</label>
+                                <div class="settings-actions">
+                                    <button class="btn-secondary" id="exportSettings">
+                                        <i class="fa-solid fa-download"></i> Exportar configurações
+                                    </button>
+                                    <button class="btn-secondary" id="importSettings">
+                                        <i class="fa-solid fa-upload"></i> Importar
+                                    </button>
+                                    <button class="btn-danger" id="resetSettings">
+                                        <i class="fa-solid fa-rotate-left"></i> Restaurar padrões
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="settings-group">
+                                <label class="settings-label">Informações do sistema</label>
+                                <div class="settings-info-box">
+                                    <div><span>Versão</span><strong>1.0.0</strong></div>
+                                    <div><span>Tema atual</span><strong id="infoCurrentTheme">Dourado</strong></div>
+                                    <div><span>Armazenamento usado</span><strong id="infoStorageUsed">0 KB</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== SOBRE ========== -->
+                        <div class="settings-panel" id="panel-about">
+                            <div class="settings-panel-header">
+                                <h2>ℹ️ Sobre o CTUOS</h2>
+                                <p>Centro de Inteligência Cibernética</p>
+                            </div>
+
+                            <div class="about-app">
+                                <div class="about-app-logo">CTU<span>OS</span></div>
+                                <div class="about-app-version">Versão 1.0.0</div>
+                                <p class="about-app-desc">
+                                    Sistema de monitoramento, análise e educação contra fraudes digitais.
+                                    Nosso objetivo é proteger a sociedade através da colaboração e tecnologia.
+                                </p>
+                                <div class="about-app-links">
+                                    <a href="/sobre/sobre.html" class="btn-secondary">
+                                        <i class="fa-solid fa-circle-info"></i> Sobre
+                                    </a>
+                                    <a href="#" class="btn-secondary" id="linkPrivacy">
+                                        <i class="fa-solid fa-shield-halved"></i> Privacidade
+                                    </a>
+                                    <a href="#" class="btn-secondary" id="linkTerms">
+                                        <i class="fa-solid fa-file-contract"></i> Termos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <div class="logo">CTU<span>OS</span></div>
+                <div class="copy">© <span id="footerYear"></span> — Centro de Inteligência Cibernética</div>
+            </div>
+            <div class="footer-col">
+                <h5>Institucional</h5>
+                <a href="/sobre/sobre.html">Sobre</a>
+                <a href="/sobre/sobre.html">Equipe</a>
+                <a href="/sobre/sobre.html">Missão</a>
+            </div>
+            <div class="footer-col">
+                <h5>Conteúdo</h5>
+                <a href="/boletim/boletins.html">Boletins</a>
+                <a href="/denunciar/denunciar.html">Relatar</a>
+                <a href="/estatisticas/estatisticas.html">Estatísticas</a>
+                <a href="/aprender/aprender.html">Guias</a>
+            </div>
+            <div class="footer-col">
+                <h5>Transparência</h5>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">LGPD</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL AUTH (igual às outras páginas) ===== -->
+    <div class="auth-modal" id="authModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>CTU<span>OS</span></h2>
+                <button class="modal-close" id="authModalClose">&times;</button>
+            </div>
+            <div class="auth-tabs">
+                <button class="active" data-tab="login">Entrar</button>
+                <button data-tab="register">Criar conta</button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="error-message" id="loginError">Credenciais inválidas.</div>
+                <div class="form-group">
+                    <label for="loginIdentifier">E-mail ou usuário <span class="required">*</span></label>
+                    <input type="text" id="loginIdentifier" placeholder="exemplo@email.com ou @usuario" required />
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha <span class="required">*</span></label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <button type="button" class="btn-secondary" id="forgotPasswordBtn">Esqueceu a senha?</button>
+                </div>
+                <div class="auth-footer">Não tem conta? <a id="switchToRegister">Crie uma agora</a></div>
+            </form>
+            <form class="auth-form" id="registerForm" style="display:none;">
+                <div class="error-message" id="registerError">Preencha todos os campos.</div>
+                <div class="success-message" id="registerSuccess">Conta criada com sucesso!</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="registerName">Nome <span class="required">*</span></label>
+                        <input type="text" id="registerName" placeholder="Seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUsername">Usuário <span class="required">*</span></label>
+                        <input type="text" id="registerUsername" placeholder="@usuario" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">E-mail <span class="required">*</span></label>
+                    <input type="email" id="registerEmail" placeholder="exemplo@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha <span class="required">*</span></label>
+                    <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirmar senha <span class="required">*</span></label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Digite novamente" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Criar conta</button>
+                </div>
+                <div class="auth-footer">Já tem conta? <a id="switchToLogin">Faça login</a></div>
+            </form>
+            <form class="auth-form" id="forgotPasswordForm" style="display:none;">
+                <div class="error-message" id="forgotError">E-mail não encontrado.</div>
+                <div class="success-message" id="forgotSuccess">Link enviado para seu e-mail.</div>
+                <div class="form-group">
+                    <label for="forgotEmail">E-mail <span class="required">*</span></label>
+                    <input type="email" id="forgotEmail" placeholder="exemplo@email.com" required />
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Enviar link</button>
+                    <button type="button" class="btn-secondary" id="backToLoginBtn">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

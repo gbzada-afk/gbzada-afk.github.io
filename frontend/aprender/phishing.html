@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing — Curso CTUOS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/aprender/phishing.css">
+</head>
+
+<body>
+
+  <!-- READING PROGRESS -->
+  <div class="reading">
+    <div id="reading-progress"></div>
+  </div>
+
+  <!-- TOP HEADER -->
+  <header class="top">
+    <div class="topin">
+      <a class="brand" href="/aprender/aprender.html" aria-label="CTUOS, início">
+        CTU<em>OS</em>
+      </a>
+      <span class="toplabel">Curso · Phishing</span>
+      <button id="toggle" class="hamb" type="button" aria-label="Abrir índice" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+
+    <!-- SIDEBAR -->
+    <aside id="side" class="side" aria-label="Índice do curso">
+      <span class="eyebrow">Índice</span>
+      <nav class="nav">
+        <a class="active" href="#inicio">Visão geral</a>
+        <a href="#modulo-1">01 — O que é phishing</a>
+        <a href="#modulo-2">02 — Tipos de phishing</a>
+        <a href="#modulo-3">03 — Como identificar</a>
+        <a href="#modulo-4">04 — Casos reais</a>
+        <a href="#modulo-5">05 — Prevenção</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#glossario">Glossário</a>
+        <a href="#links">Links úteis</a>
+      </nav>
+      <div class="progressbox">
+        <div class="progressrow">
+          <span>Progresso</span>
+          <span id="visited">0%</span>
+        </div>
+        <div class="bar">
+          <div id="module-progress"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- HERO -->
+      <section id="inicio" class="hero fade" aria-labelledby="course-title">
+        <span class="badge">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Curso CTUOS
+        </span>
+        <div class="hero-grid">
+          <div>
+            <h1 id="course-title">Phishing</h1>
+            <p class="subtitle">
+              E-mails, SMS e ligações falsas são cada vez mais sofisticados. Aprenda a identificar e evitar essas armadilhas.
+            </p>
+            <div class="meta">
+              <span class="pill"><i class="fa-solid fa-signal"></i> Iniciante</span>
+              <span class="pill"><i class="fa-regular fa-clock"></i> 20 minutos</span>
+              <span class="pill"><i class="fa-regular fa-folder"></i> 5 módulos</span>
+              <span class="pill"><i class="fa-solid fa-certificate"></i> Certificado</span>
+            </div>
+            <a class="btn gold" href="#modulo-1">
+              Começar curso
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+          <div class="fish" aria-hidden="true">🎣</div>
+        </div>
+      </section>
+
+      <!-- MÓDULO 1 -->
+      <section id="modulo-1" class="fade course-module" aria-labelledby="m1">
+        <span class="eyebrow">Módulo 01</span>
+        <h2 id="m1" class="section-title">O que é phishing</h2>
+        <p class="intro">
+          Phishing é uma fraude que tenta fazer você entregar dados, credenciais ou dinheiro. Vem do inglês <em>fishing</em> ("pescar") — a ideia é lançar uma isca e esperar que a vítima morda.
+        </p>
+
+        <div class="grid2">
+          <article class="card">
+            <h3>Definição</h3>
+            <p>Phishing é um ataque que usa mensagens falsas — e-mails, SMS, ligações, redes sociais — para induzir você a clicar, baixar ou informar dados sensíveis.</p>
+          </article>
+          <article class="card">
+            <h3>A isca</h3>
+            <p>O criminoso se passa por banco, loja, Correios, Receita Federal ou até por um amigo. O objetivo é parecer confiável o suficiente para você baixar a guarda.</p>
+          </article>
+        </div>
+
+        <div class="statgrid">
+          <div class="stat">
+            <b>3,4 bi</b>
+            <span>de e-mails de phishing são enviados por dia no mundo (estimativa de mercado).</span>
+          </div>
+          <div class="stat">
+            <b>90%</b>
+            <span>dos ataques cibernéticos começam com uma tentativa de phishing.</span>
+          </div>
+          <div class="stat">
+            <b>2º</b>
+            <span>Brasil é um dos países mais atacados por phishing na América Latina.</span>
+          </div>
+        </div>
+
+        <p class="note">
+          Dados de referência para conscientização. Estatísticas variam conforme metodologia e fonte.
+        </p>
+      </section>
+
+      <!-- MÓDULO 2 -->
+      <section id="modulo-2" class="fade course-module" aria-labelledby="m2">
+        <span class="eyebrow">Módulo 02</span>
+        <h2 id="m2" class="section-title">Tipos de phishing</h2>
+        <p class="intro">
+          Phishing não é só e-mail. Conheça as 7 variações mais comuns e onde cada uma aparece.
+        </p>
+
+        <div class="types">
+          <article class="type">
+            <h3>Phishing por e-mail</h3>
+            <p>Mensagem imita banco, loja ou serviço conhecido e conduz a um link falso.</p>
+          </article>
+          <article class="type">
+            <h3>Smishing</h3>
+            <p>SMS com falso rastreio, bloqueio de conta ou prêmio para capturar dados.</p>
+          </article>
+          <article class="type">
+            <h3>Vishing</h3>
+            <p>Ligação em que um golpista se passa por suporte, banco ou autoridade.</p>
+          </article>
+          <article class="type">
+            <h3>Clone phishing</h3>
+            <p>Uma mensagem legítima é copiada e alterada com link ou anexo malicioso.</p>
+          </article>
+          <article class="type">
+            <h3>Spear phishing</h3>
+            <p>Ataque direcionado, com dados da vítima para parecer mais convincente.</p>
+          </article>
+          <article class="type">
+            <h3>Whaling</h3>
+            <p>Spear phishing voltado a executivos e pessoas com acesso estratégico.</p>
+          </article>
+          <article class="type">
+            <h3>Angler phishing</h3>
+            <p>Perfis falsos em redes sociais fingem ser marcas e equipes de atendimento.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MÓDULO 3 -->
+      <section id="modulo-3" class="fade course-module" aria-labelledby="m3">
+        <span class="eyebrow">Módulo 03</span>
+        <h2 id="m3" class="section-title">Como identificar</h2>
+        <p class="intro">
+          Os sinais abaixo aparecem em praticamente todo phishing. Aprenda a reconhecê-los.
+        </p>
+
+        <div class="mono">
+          De: suporte@banco-seguro-verificacao.info<br>
+          Assunto: URGENTE: sua conta será bloqueada em 15 minutos<br><br>
+          Acesse agora: banco-seguro.verificar-conta.net/login
+        </div>
+
+        <div class="warning">
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Remetente parecido, mas com domínio diferente do oficial.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Urgência, ameaça ou recompensa exagerada para impedir que você confira.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Links encurtados, erros de escrita, anexos inesperados ou pedido de códigos.</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Cadeado HTTPS não prova que o site é legítimo: confira o domínio completo.</span>
+          </div>
+        </div>
+
+        <div class="checklist">
+          <h3>Checklist antes de clicar</h3>
+          <p>Adote esses hábitos e reduza drasticamente o risco:</p>
+
+          <label class="check">
+            <input class="safecheck" data-key="sender" type="checkbox">
+            <span>Confiro o endereço completo do remetente, não apenas o nome exibido.</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="url" type="checkbox">
+            <span>Passo o cursor sobre links e verifico o domínio antes de abrir.</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="official" type="checkbox">
+            <span>Acesso serviços digitando o endereço ou usando o aplicativo oficial.</span>
+          </label>
+          <label class="check">
+            <input class="safecheck" data-key="codes" type="checkbox">
+            <span>Nunca envio senhas ou códigos de autenticação por mensagem ou telefone.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- MÓDULO 4 -->
+      <section id="modulo-4" class="fade course-module" aria-labelledby="m4">
+        <span class="eyebrow">Módulo 04</span>
+        <h2 id="m4" class="section-title">Casos reais</h2>
+        <p class="intro">
+          Phishing funciona em qualquer escala — de grandes empresas a golpes caseiros. Veja exemplos reais.
+        </p>
+
+        <div class="casegrid">
+          <article class="card">
+            <h3>Google e Facebook — 2017</h3>
+            <p>E-mails e faturas falsos imitando um fornecedor real geraram mais de US$ 100 milhões em prejuízo.</p>
+          </article>
+          <article class="card">
+            <h3>Twitter — 2020</h3>
+            <p>Funcionários foram alvo de spear phishing por telefone. 130 contas foram visadas e 45 publicaram fraude com Bitcoin.</p>
+          </article>
+          <article class="card">
+            <h3>Falso e-mail da Receita Federal</h3>
+            <p>Mensagens sobre "pendências no CPF" levam a sites clonados que roubam dados e senhas.</p>
+          </article>
+          <article class="card">
+            <h3>Falso boleto bancário</h3>
+            <p>Boletos adulterados em PDF chegam com aparência legítima. O valor pago vai para a conta do golpista.</p>
+          </article>
+          <article class="card">
+            <h3>Falso prêmio</h3>
+            <p>"Você ganhou um prêmio!" — a vítima paga uma "taxa" e nunca recebe nada.</p>
+          </article>
+          <article class="card">
+            <h3>Falso RH e falsa vaga</h3>
+            <p>Criminosos imitam processos seletivos para capturar documentos e dados pessoais.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MÓDULO 5 -->
+      <section id="modulo-5" class="fade course-module" aria-labelledby="m5">
+        <span class="eyebrow">Módulo 05</span>
+        <h2 id="m5" class="section-title">Prevenção</h2>
+        <p class="intro">
+          Adote essas 6 práticas. Elas valem para e-mail, SMS, ligação e redes sociais.
+        </p>
+
+        <div class="steps">
+          <div>Não clique em links, não baixe anexos inesperados e não responda à pressão.</div>
+          <div>Verifique o remetente e confirme pedidos por um canal independente e oficial.</div>
+          <div>Ative a autenticação em dois fatores em e-mail, redes sociais e serviços importantes.</div>
+          <div>Use um gerenciador de senhas para manter credenciais únicas e fortes.</div>
+          <div>Mantenha navegador, sistema, aplicativos e antivírus atualizados.</div>
+          <div>Reporte a tentativa à plataforma e compartilhe o alerta com a equipe responsável.</div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz" class="fade" aria-labelledby="quiz-title">
+        <span class="eyebrow">Quiz</span>
+        <h2 id="quiz-title" class="section-title">Teste seu conhecimento</h2>
+        <p class="intro">
+          Dez perguntas rápidas para fixar o conteúdo. Você pode refazer quantas vezes quiser.
+        </p>
+
+        <div class="quiz">
+          <div class="quizhead">
+            <span>Escolha a alternativa mais segura em cada cenário.</span>
+            <span id="score" class="score">0 / 10 corretas</span>
+          </div>
+
+          <div class="questions">
+            <article class="question">
+              <h3>1. Um banco pede seu código por SMS para “evitar bloqueio”. O que fazer?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Enviar o código para confirmar a identidade.</button>
+                <button class="answer" data-correct="true">Encerrar e falar com o banco pelo canal oficial.</button>
+                <button class="answer" data-correct="false">Clicar no link para verificar o aviso.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>2. Qual endereço indica maior risco?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">banco-seguro.verificar-acesso.net</button>
+                <button class="answer" data-correct="false">www.bancooficial.com.br</button>
+                <button class="answer" data-correct="false">Aplicativo oficial instalado pela loja.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>3. Smishing é uma tentativa de phishing feita por:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">E-mail corporativo.</button>
+                <button class="answer" data-correct="true">SMS ou mensagem de texto.</button>
+                <button class="answer" data-correct="false">Ligação telefônica.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>4. Um cadeado HTTPS em um site garante que ele é legítimo?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Sim, sempre.</button>
+                <button class="answer" data-correct="true">Não. É preciso conferir o domínio real.</button>
+                <button class="answer" data-correct="false">Sim, se o site tiver um formulário.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>5. Qual é a melhor reação a uma oferta “válida por 5 minutos”?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Comprar rapidamente para não perder.</button>
+                <button class="answer" data-correct="true">Parar e verificar a oferta em fonte oficial.</button>
+                <button class="answer" data-correct="false">Encaminhar a mensagem para amigos.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>6. Vishing usa principalmente:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">QR Code adulterado.</button>
+                <button class="answer" data-correct="false">Mensagem em rede social.</button>
+                <button class="answer" data-correct="true">Voz e telefone para manipular a vítima.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>7. O que é spear phishing?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">Ataque direcionado e personalizado.</button>
+                <button class="answer" data-correct="false">Falha técnica no antivírus.</button>
+                <button class="answer" data-correct="false">Mensagem oficial de segurança.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>8. Qual informação nunca deve ser enviada por chat a um “atendente”?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="true">Código de autenticação em dois fatores.</button>
+                <button class="answer" data-correct="false">Nome do serviço que você usa.</button>
+                <button class="answer" data-correct="false">Horário de atendimento do banco.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>9. Qual prática reduz o impacto de vazamentos?</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Usar a mesma senha em todos os sites.</button>
+                <button class="answer" data-correct="true">Usar senhas únicas com gerenciador de senhas.</button>
+                <button class="answer" data-correct="false">Salvar códigos de 2FA em mensagens.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+
+            <article class="question">
+              <h3>10. Ao receber um falso e-mail da Receita Federal, o ideal é:</h3>
+              <div class="answers">
+                <button class="answer" data-correct="false">Abrir o anexo para conferir a pendência.</button>
+                <button class="answer" data-correct="false">Responder solicitando mais detalhes.</button>
+                <button class="answer" data-correct="true">Acessar serviços pelo portal oficial, sem usar o link recebido.</button>
+              </div>
+              <p class="feedback"></p>
+            </article>
+          </div>
+
+          <div id="complete" class="complete">
+            <p>Resultado final: <strong id="final"></strong>. Continue praticando a verificação antes de agir.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button id="retry" class="btn secondary" type="button">
+                <i class="fa-solid fa-rotate-left"></i> Refazer quiz
+              </button>
+              <button id="open-cert" class="btn gold" type="button">
+                <i class="fa-solid fa-certificate"></i> Gerar certificado
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GLOSSÁRIO -->
+      <section id="glossario" class="fade" aria-labelledby="glossary-title">
+        <span class="eyebrow">Glossário</span>
+        <h2 id="glossary-title" class="section-title">Termos importantes</h2>
+
+        <div class="gloss">
+          <article class="card">
+            <h3>Phishing</h3>
+            <p>Fraude que induz uma pessoa a entregar dados, credenciais ou dinheiro.</p>
+          </article>
+          <article class="card">
+            <h3>Smishing</h3>
+            <p>Phishing distribuído por SMS ou mensagens de texto.</p>
+          </article>
+          <article class="card">
+            <h3>Vishing</h3>
+            <p>Golpe baseado em ligação telefônica ou mensagem de voz.</p>
+          </article>
+          <article class="card">
+            <h3>Spoofing</h3>
+            <p>Falsificação de identidade, domínio, número ou remetente.</p>
+          </article>
+          <article class="card">
+            <h3>Spear phishing</h3>
+            <p>Ataque personalizado para uma pessoa, setor ou organização.</p>
+          </article>
+          <article class="card">
+            <h3>2FA</h3>
+            <p>Autenticação em dois fatores: uma camada extra além da senha.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- LINKS ÚTEIS -->
+      <section id="links" class="fade" aria-labelledby="links-title">
+        <span class="eyebrow">Recursos</span>
+        <h2 id="links-title" class="section-title">Links úteis</h2>
+        <p class="intro">
+          Canais oficiais para aprender mais, denunciar e se proteger.
+        </p>
+
+        <div class="links">
+          <a class="link" href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Cartilha de Segurança para Internet — CERT.br</b>
+              <span>Orientações brasileiras para prevenção de golpes e phishing.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="https://stats.cert.br/phishing/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Estatísticas de phishing — CERT.br</b>
+              <span>Acompanhamento de URLs falsas verificadas no Brasil.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="https://support.google.com/mail/answer/8253?hl=pt-BR" target="_blank" rel="noopener noreferrer">
+            <div>
+              <b>Como reportar phishing no Gmail</b>
+              <span>Instruções oficiais para denunciar mensagens suspeitas.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+          <a class="link" href="/denunciar/denunciar.html">
+            <div>
+              <b>CTUOS — Relatar Golpe</b>
+              <span>Ajude outras pessoas denunciando um caso de phishing.</span>
+            </div>
+            <i class="fa-solid fa-external-link-alt"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- SOBRE O CURSO -->
+      <section class="about fade" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-title">Sobre este curso</h2>
+        <div class="aboutgrid">
+          <div>
+            <span>Autor</span>
+            <p>Equipe CTUOS — Centro de Inteligência Cibernética</p>
+          </div>
+          <div>
+            <span>Versão</span>
+            <p>1.0.0</p>
+          </div>
+          <div>
+            <span>Publicado</span>
+            <p>Setembro de 2026</p>
+          </div>
+          <div>
+            <span>Licença</span>
+            <p>Material de uso educacional. Reprodução permitida com créditos ao CTUOS.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p style="margin:0;">
+      <strong style="color:var(--gold);">CTUOS</strong> — Centro de Inteligência Cibernética.
+      © <span id="footerYear"></span> Todos os direitos reservados.
+    </p>
+    <p style="margin:8px 0 0;font-size:0.72rem;opacity:0.7;">
+      Material educacional produzido pela equipe CTUOS.
+    </p>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="up" class="up" type="button" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- MODAL CERTIFICADO -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cert-title">
+    <div class="modalbox">
+      <div class="modalhead">
+        <div>
+          <span class="eyebrow">Conclusão do curso</span>
+          <h2 id="cert-title" class="section-title" style="font-size:1.3rem;">Seu certificado</h2>
+        </div>
+        <button id="close" class="close" type="button" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="cert-form" class="form">
+        <label for="name">Digite seu nome para gerar o certificado</label>
+        <input id="name" type="text" maxlength="70" placeholder="Seu nome completo" required>
+        <button class="btn gold" type="submit" style="width:100%;margin-top:14px;">
+          <i class="fa-solid fa-certificate"></i> Gerar certificado
+        </button>
+      </form>
+
+      <div id="certificate" class="cert">
+        <div class="brand">CTU<em>OS</em></div>
+        <h2>Certificado de Conclusão</h2>
+        <p>Este certificado confirma que</p>
+        <div id="cert-name" class="certname"></div>
+        <p>concluiu o curso “Phishing” com carga horária estimada de 20 minutos.</p>
+        <span id="cert-date" class="signature"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/aprender/phishing.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    // Ano no footer
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>

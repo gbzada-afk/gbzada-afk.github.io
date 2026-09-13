@@ -1,0 +1,374 @@
+/* ============================================================
+   ADMIN — global.css
+   Fundação do painel administrativo do CTUOS
+   ============================================================ */
+
+/* ============================================================
+   RESET
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   VARIÁVEIS
+   ============================================================ */
+:root {
+    --bg-primary: #0A0C10;
+    --bg-card: #14171C;
+    --bg-input: #1A1D23;
+    --bg-hover: #1E2228;
+    --bg-sidebar: #0A0C10;
+    --bg-status-bar: #0D0F14;
+    --bg-modal: #14171C;
+    --bg-overlay: rgba(0, 0, 0, 0.85);
+
+    --text-primary: #EDEFF2;
+    --text-secondary: #9BA0A8;
+    --text-tertiary: #5A6068;
+
+    --border-subtle: #21262D;
+    --border-focus: #C9A961;
+
+    --accent-gold: #C9A961;
+    --accent-gold-hover: #d4b86a;
+    --accent-gold-light: rgba(201, 169, 97, 0.10);
+    --accent-glow: rgba(201, 169, 97, 0.16);
+
+    --status-critical: #E74C3C;
+    --status-high: #F39C12;
+    --status-medium: #F1C40F;
+    --status-low: #2ECC71;
+    --status-info: #3498DB;
+
+    --font-title: 'Geist', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Courier New', monospace;
+
+    --radius: 12px;
+    --radius-sm: 6px;
+    --max-width: 1200px;
+
+    --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-base: 0.25s ease;
+    --transition-fast: 0.15s ease;
+}
+
+/* ============================================================
+   TIPOGRAFIA
+   ============================================================ */
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.page-header {
+    padding: 2.5rem 0 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    background: radial-gradient(
+        ellipse at 20% 0%,
+        rgba(201, 169, 97, 0.05) 0%,
+        transparent 60%
+    );
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 169, 97, 0.4),
+        transparent
+    );
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.3rem;
+}
+
+.page-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================================
+   ADMIN HEADER
+   ============================================================ */
+.admin-header {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--accent-gold);
+    background: rgba(10, 12, 16, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.admin-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity var(--transition-fast);
+}
+
+.admin-logo:hover {
+    opacity: 0.85;
+}
+
+.admin-logo span {
+    color: var(--accent-gold);
+}
+
+.admin-badge {
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    padding: 0.15rem 0.55rem;
+    border-radius: 100px;
+    background: var(--accent-gold-light);
+    font-family: var(--font-title);
+}
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.admin-nav a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.admin-nav a:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+.admin-nav a.active {
+    color: var(--accent-gold);
+    background: var(--accent-gold-light);
+    font-weight: 600;
+}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+    background: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.admin-user:hover {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-light);
+}
+
+.admin-user-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent-gold-light);
+    border: 1.5px solid var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-family: var(--font-title);
+    flex-shrink: 0;
+}
+
+.admin-user-name {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-admin {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-subtle);
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-tertiary);
+    margin-top: 4rem;
+}
+
+.footer-admin .footer-brand {
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-admin .footer-brand span {
+    color: var(--accent-gold);
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--text-tertiary); }
+.text-gold { color: var(--accent-gold); }
+.text-success { color: var(--status-low); }
+.text-danger { color: var(--status-critical); }
+.text-warning { color: var(--status-high); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.flex { display: flex; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-col { flex-direction: column; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+
+.w-full { width: 100%; }
+.hidden { display: none !important; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 900px) {
+    .admin-nav { display: none; }
+    .container { padding: 0 1.5rem; }
+}
+
+@media (max-width: 640px) {
+    .container { padding: 0 1rem; }
+    .page-header { padding: 1.5rem 0 1rem; }
+    .page-header h1 { font-size: 1.5rem; }
+    .page-header p { font-size: 0.8rem; }
+    .admin-logo { font-size: 1.1rem; }
+    .admin-user-name { display: none; }
+}
